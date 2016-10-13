@@ -1,4 +1,4 @@
-from group_items import *
+from items import *
 
 rooms = {
 	"Lobby" : room_lobby,
@@ -62,7 +62,7 @@ room_kitchen = {
 	You can go north to the laundry room, south to go back to the 
 	lobby or west to the bar.""",
 	"exits" : {"north" : "Laundry", "west" : "Bar", "south" : "Lobby"},
-	"items" : []
+	"items" : [item_kitchen_knife]
 }
 
 room_bar = {
@@ -74,7 +74,7 @@ room_bar = {
 	You can go east to the lobby, north to the kitchen or you 
 	could talk to the waiter. """,
 	"exits" : {"east" : "Lobby", "north" : "Kitchen"},
-	"items" : []
+	"items" : [item_biscuit, item_alcohol]
 }
 
 stairs_to_first = {
@@ -97,7 +97,7 @@ room_laundry = {
 	Tumble dryers spin around you. No one is here.
 	You can go north to the back alley or south to the kitchen. """,
 	"exits" : {"north" : "Alley", "south" : "Kitchen"},
-	"items" : []
+	"items" : [item_broom]
 }
 
 room_alley = {
@@ -138,7 +138,7 @@ room_1 = {
 	You are now standing in a deserted bedroom. Clothes are dtrung everywhere, furniture knocked over. 
 	Whoever stayed here left in a hurry... """,
 	"exits" : {"east" : "Rooms 1 and 2" },
-	"items" : []
+	"items" : [item_pistol, item_second_level_key]
 }
 
 room_2 = {
@@ -148,7 +148,7 @@ room_2 = {
 	than a bed, nightstand and a chest of drawers. 
 	You decide to search the room anyway - the occupant may have left something behind.""",
 	"exits" : {"west" : "Rooms 1 and 2"},
-	"items" : []
+	"items" : [item_room3_key]
 }
 
 rooms_3_and_4 = {
@@ -165,19 +165,20 @@ room_3 = {
 	"name": "room 3",
 	"description" : """
 	You enter this room to find 4 hostages - tied up with rope, their mouths stuffed with towels. 
-	A men stands guard over them, his gun pointed at them.
+	A men stands guard over them, his gun pointed at them. A keycard hangs from man's belt
 	You can go east back to the hallway or you can figh the man and save the hostages """,
 	"exits" : {"east" : "Rooms 3 and 4"},
-	"items" : []
+	"items" : [item_room5_key]
+	"locked" : True
 }
 
 room_4 = {
 	"name": "room 4",
 	"description" : """
-	You are now standing in another abandoned bedroom. A first aid kit lies under the bed.
+	You are now standing in another abandoned bedroom. A first aid kit lies under the bed, inside are some tablets.
 	You can go east back to the hallway outside or search the room.""",
 	"exits" : {"west" : "Rooms 3 and 4"},
-	"items" : []
+	"items" : [item_tablets]
 }
 
 rooms_5_and_6 = {
@@ -196,7 +197,7 @@ room_5 = {
 	You are now standing in one of the final bedrooms on this floor. A maids cart lies abandoned in the room, the towels missing. 
 	A keycard hangs off a landyard attached to the cart """,
 	"exits" : {"east" : "Rooms 5 and 6"},
-	"items" : []
+	"items" : [item_secret_key]
 	"locked" : True
 }
 
@@ -228,7 +229,6 @@ maze_start = {
 	You can go east to go back to the second floor stairs or north to enter the maze like structure""",
 	"exits" : {"east" : "Stairs to second floor", "north" : "Into the maze"},
 	"items" : [],
-	"Locked" : True
 }
 
 secret_door = {
