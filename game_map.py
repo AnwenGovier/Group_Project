@@ -129,7 +129,7 @@ first_floor_hallway = {
 }
 
 rooms_1_and_2 = {
-	"name": "outside rooms 1 and 2",
+	"name": "outside rooms one and 2",
 	"description" : """
 	You are standing outside rooms 1 and 2.
 	You can go west to go to room 1, east to room 2 or south to go back 
@@ -140,7 +140,7 @@ rooms_1_and_2 = {
 }
 
 room_1 = {
-	"name": "room 1",
+	"name": "room one",
 	"description" : """
 	You are now standing in a deserted bedroom. Clothes are dtrung everywhere, furniture knocked over. 
 	Whoever stayed here left in a hurry... """,
@@ -150,7 +150,7 @@ room_1 = {
 }
 
 room_2 = {
-	"name": "room 2",
+	"name": "room two",
 	"description" : """
 	You now stand in an empty ensuite bedroom. The bathroom is locked. The room contains little more 
 	than a bed, nightstand and a chest of drawers. 
@@ -162,7 +162,7 @@ room_2 = {
 }
 
 rooms_3_and_4 = {
-	"name": "outside rooms 3 and 4",
+	"name": "outside rooms three and four",
 	"description" : """
 	You are standing outside rooms 3 and 4.
 	You can go west to go to room 3, east to room 4 or south to go back 
@@ -173,7 +173,7 @@ rooms_3_and_4 = {
 }
 
 room_3 = {
-	"name": "room 3",
+	"name": "room three",
 	"description" : """
 	You enter this room to find 4 hostages - tied up with rope, their mouths stuffed with towels. 
 	A men stands guard over them, his gun pointed at them. A keycard hangs from man's belt
@@ -184,7 +184,7 @@ room_3 = {
 }
 
 room_4 = {
-	"name": "room 4",
+	"name": "room four",
 	"description" : """
 	You are now standing in another abandoned bedroom. A first aid kit lies under the bed, inside are some tablets.
 	You can go east back to the hallway outside or search the room.""",
@@ -194,7 +194,7 @@ room_4 = {
 }
 
 rooms_5_and_6 = {
-	"name": "outside rooms 5 and 6",
+	"name": "outside rooms five and six",
 	"description" : """
 	You are standing outside rooms 5 and 6.
 	You can go west to go to room 5, east to room 6 or south to go back 
@@ -205,7 +205,7 @@ rooms_5_and_6 = {
 }
 
 room_5 = {
-	"name": "room 5",
+	"name": "room five",
 	"description" : """
 	You are now standing in one of the final bedrooms on this floor. A maids cart lies abandoned in the room, the towels missing. 
 	A keycard hangs off a landyard attached to the cart """,
@@ -215,7 +215,7 @@ room_5 = {
 }
 
 room_6 = {
-	"name": "room 6",
+	"name": "room six",
 	"description" : """This room is locked. You cannot get in. """,
 	"exits" : {"west" : "Rooms 5 and 6"},
 	"items" : [],
