@@ -115,6 +115,19 @@ def exit_entered_leads_to(exits, direction):
 	return rooms[exits[direction]]["name"]
 
 def print_the_exits_avaliable_to_user(direction, leads_to):
+	"""
+	The code in this function prints a menu of exits that are avaliable
+	to the user. It uses a direction and the name of the room to do this.
+	They should be printed like this:
+	GO <EXIT NAME> to <leads to>.
+	e.g.
+	>>>print_the_exits_avaliable_to_user("east", "Lobby")
+	GO EAST to the hotel lobby.
+	>>>print_the_exits_avaliable_to_user("north", "Laundry")
+	GO EAST to the laundry room.
+	>>>print_the_exits_avaliable_to_user("west", "Room 1")
+	GO WEST to room one.
+	"""
 	print('Go ' + direction.upper() + ' to ' + leads_to + '.')
 
 def print_menu_of_items_and_exits(exits, room_items, inventory_items):
