@@ -1,7 +1,7 @@
 item_pistol = {
 	"id": "pistol",
 
-	"name": "Pistol",
+	"name": "a pistol",
 
 	"damage": 90,
 
