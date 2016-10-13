@@ -50,7 +50,8 @@ room_lobby = {
 	You can go west to the hotel bar, north to the 
 	kitchen and east to the first floor stairs.""",
 	"exits" : {"west" : "Bar", "north" : "Kitchen", "east" : "Stairs to first floor"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 room_kitchen = {
@@ -62,7 +63,8 @@ room_kitchen = {
 	You can go north to the laundry room, south to go back to the 
 	lobby or west to the bar.""",
 	"exits" : {"north" : "Laundry", "west" : "Bar", "south" : "Lobby"},
-	"items" : [item_kitchen_knife]
+	"items" : [item_kitchen_knife],
+	"locked" : False
 }
 
 room_bar = {
@@ -74,7 +76,8 @@ room_bar = {
 	You can go east to the lobby, north to the kitchen or you 
 	could talk to the waiter. """,
 	"exits" : {"east" : "Lobby", "north" : "Kitchen"},
-	"items" : [item_biscuit, item_alcohol]
+	"items" : [item_biscuit, item_alcohol],
+	"locked" : False
 }
 
 stairs_to_first = {
@@ -86,7 +89,7 @@ stairs_to_first = {
 	You can go west to go back to the lobby or you could 
 	confront the bad guy by going east.""",
 	"exits" : {"west" : "Lobby", "east" : "Hallway"},
-	"items" : []
+	"items" : [],
 	"locked" : True
 }
 
@@ -97,7 +100,8 @@ room_laundry = {
 	Tumble dryers spin around you. No one is here.
 	You can go north to the back alley or south to the kitchen. """,
 	"exits" : {"north" : "Alley", "south" : "Kitchen"},
-	"items" : [item_broom]
+	"items" : [item_broom],
+	"locked" : False
 }
 
 room_alley = {
@@ -107,7 +111,8 @@ room_alley = {
 	Dustbins line the street giving off a foul odour of waste and decay. 
 	You can go south to go back to the Laundry room. """,
 	"exits" : {"south" : "Laundry"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 #first floor rooms
@@ -119,7 +124,8 @@ first_floor_hallway = {
 	You can go east to go to the first floor stairs or east to go to the second floor stairs.
 	You can also go an investigate the rooms by going north.""",
 	"exits" : {"west" : "Stairs to first floor", "east" : "Stairs to second floor", "north" : "Rooms 1 and 2" },
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 rooms_1_and_2 = {
@@ -129,7 +135,8 @@ rooms_1_and_2 = {
 	You can go west to go to room 1, east to room 2 or south to go back 
 	to the begining of the hallway. You can also go north to look at rooms 3 and 4. """,
 	"exits" : {"west" : "Room 1", "east" : "Room 2", "south" : "Hallway", "north" : "Rooms 3 and 4"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 room_1 = {
@@ -138,7 +145,8 @@ room_1 = {
 	You are now standing in a deserted bedroom. Clothes are dtrung everywhere, furniture knocked over. 
 	Whoever stayed here left in a hurry... """,
 	"exits" : {"east" : "Rooms 1 and 2" },
-	"items" : [item_pistol, item_second_level_key]
+	"items" : [item_pistol, item_second_level_key],
+	"locked" : False
 }
 
 room_2 = {
@@ -148,7 +156,9 @@ room_2 = {
 	than a bed, nightstand and a chest of drawers. 
 	You decide to search the room anyway - the occupant may have left something behind.""",
 	"exits" : {"west" : "Rooms 1 and 2"},
-	"items" : [item_room3_key]
+	"items" : [item_room3_key],
+	"locked" : False
+
 }
 
 rooms_3_and_4 = {
@@ -158,7 +168,8 @@ rooms_3_and_4 = {
 	You can go west to go to room 3, east to room 4 or south to go back 
 	to rooms 1 and 2. You can also go north to look at rooms 5 and 6. """,
 	"exits" : {"west" : "Room 3", "east" : "Room 4", "south" : "Rooms 1 and 2", "north" : "Rooms 5 and 6"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 room_3 = {
@@ -168,7 +179,7 @@ room_3 = {
 	A men stands guard over them, his gun pointed at them. A keycard hangs from man's belt
 	You can go east back to the hallway or you can figh the man and save the hostages """,
 	"exits" : {"east" : "Rooms 3 and 4"},
-	"items" : [item_room5_key]
+	"items" : [item_secret_key],
 	"locked" : True
 }
 
@@ -178,7 +189,8 @@ room_4 = {
 	You are now standing in another abandoned bedroom. A first aid kit lies under the bed, inside are some tablets.
 	You can go east back to the hallway outside or search the room.""",
 	"exits" : {"west" : "Rooms 3 and 4"},
-	"items" : [item_tablets]
+	"items" : [item_tablets, item_room5_key],
+	"locked" : False
 }
 
 rooms_5_and_6 = {
@@ -188,7 +200,8 @@ rooms_5_and_6 = {
 	You can go west to go to room 5, east to room 6 or south to go back 
 	to rooms 3 and 4. """,
 	"exits" : {"west" : "Room 5", "east" : "Room 6", "south" : "Rooms 3 and 4"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 room_5 = {
@@ -197,7 +210,7 @@ room_5 = {
 	You are now standing in one of the final bedrooms on this floor. A maids cart lies abandoned in the room, the towels missing. 
 	A keycard hangs off a landyard attached to the cart """,
 	"exits" : {"east" : "Rooms 5 and 6"},
-	"items" : [item_secret_key]
+	"items" : [],
 	"locked" : True
 }
 
@@ -205,7 +218,7 @@ room_6 = {
 	"name": "room 6",
 	"description" : """This room is locked. You cannot get in. """,
 	"exits" : {"west" : "Rooms 5 and 6"},
-	"items" : []
+	"items" : [],
 	"locked" : True
 }
 
@@ -229,6 +242,7 @@ maze_start = {
 	You can go east to go back to the second floor stairs or north to enter the maze like structure""",
 	"exits" : {"east" : "Stairs to second floor", "north" : "Into the maze"},
 	"items" : [],
+	"locked" : False
 }
 
 secret_door = {
@@ -247,7 +261,8 @@ maze_1 = {
 	You have begun to search the maze.
 	You can go west or west to go into the maze or south to back to the start of the third floor. """,
 	"exits" : {"west" : "Further into the maze", "east" : "Deeper into the maze", "south" : "Maze start"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 maze_2 = {
@@ -256,7 +271,8 @@ maze_2 = {
 	You have reached a dead end. Debris blocks your path.
 	Go east to go back. """,
 	"exits" : {"east" : "Into the maze"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 maze_3 = {
@@ -265,7 +281,8 @@ maze_3 = {
 	You are now deeper into the maze.
 	You can go further in by going north or south, or closer to the beginning by going west.""",
 	"exits" : {"north" : "Deeper again", "south" : "Into more maze", "west" : "Into the maze"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 maze_4 = {
@@ -274,7 +291,8 @@ maze_4 = {
 	You have reached another dead end.
 	You can go north to go back into the maze. """,
 	"exits" : {"north" : "Deeper into the maze"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 maze_5 = {
@@ -282,7 +300,8 @@ maze_5 = {
 	"description" : """
 	You have reached a junction, you can only turn west or go back south.""",
 	"exits" : {"west" : "Into even more maze", "south" : "Deeper into the maze"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 maze_6 = {
@@ -291,7 +310,8 @@ maze_6 = {
 	You have now reached a junction.
 	You can go north, south or west as well as east to retrace your previous steps.""",
 	"exits" : {"north" : "Even deeper into the maze -like floor", "south" : "Even further into this floor", "east" : "Further into the third floor" , "west" : "Deeper again"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 maze_7 = {
@@ -300,7 +320,8 @@ maze_7 = {
 	Again you have reached a dead end.
 	You can go north to retrace your last steps. """,
 	"exits" : {"north" : "Into even more maze"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 maze_8 = {
@@ -308,7 +329,8 @@ maze_8 = {
 	"description" : """
 	You have reached another junction, you can only go east to go forwards or south to go back.""",
 	"exits" : {"south": "Into even more maze", "east" : "Even deeper"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 maze_9 = {
@@ -316,7 +338,8 @@ maze_9 = {
 	"description" : """
 	You can see the exit not too far ahead of you. You can go north towards the exit or west to back into the maze. """,
 	"exits" : {"north" : "Stairs to the roof", "west" : "Even deeper into the maze -like floor"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 maze_10 = {
@@ -325,7 +348,8 @@ maze_10 = {
 	You arrive at a 4-point cross road.
 	You can go north, south and west to go further into the maze or east to go back to where you just were.""",
 	"exits" : {"north" : "Further in", "south" : "Even further in", "east" : "Into even more maze", "west" : "Even further in"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 maze_11 = {
@@ -334,7 +358,8 @@ maze_11 = {
 	A plaster board wall blocks your path. 
 	You can go south to go back.""",
 	"exits" : {"south" : "Further into the third floor"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 maze_12 = {
@@ -343,7 +368,8 @@ maze_12 = {
 	Fallen debris from the ceiling blocks your path.
 	You can go north to go back into the maze.""",
 	"exits" : {"north" : "Further into the third floor"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 maze_13 = {
@@ -352,7 +378,8 @@ maze_13 = {
 	You have arrived at a T junction.
 	Going either north or south will take you deeper into the maze, going east will take you back to the last place you were.""",
 	"exits" : {"north" : "Even deeper into the third floor", "south" : "More of the maze", "east" : "Further into the third floor"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 maze_14 = {
@@ -361,7 +388,8 @@ maze_14 = {
 	You have reached a dead end. The walls of the building block you from three sides.
 	You can only go south.""",
 	"exits" : {"south" : "Deeper into the maze again"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 maze_15 = {
@@ -369,7 +397,8 @@ maze_15 = {
 	"description" : """
 	You have reached a dead end. The walls of the building block all ways except the way you came from.""",
 	"exits" : {"north" : "Deeper into the maze again"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 stairs_to_roof = {
@@ -378,7 +407,8 @@ stairs_to_roof = {
 	To your right lies a door that will take you to the roof, the only other option to where the target is hiding.
 	Go east to go through the door or go south to go back into the third floor maze.""",
 	"exits" : {"east" : "roof", "south" : "Even deeper"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
 #the roof
@@ -389,6 +419,7 @@ room_roof = {
 	One man stands in front of you alone, your target Dr Kirill. He doesn't look happy to see you.
 	You can confront him or you can go back down to the third floor.""",
 	"exits" : {"west" : "Stairs to the roof"},
-	"items" : []
+	"items" : [],
+	"locked" : False
 }
 
