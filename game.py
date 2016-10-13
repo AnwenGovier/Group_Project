@@ -1,36 +1,41 @@
 #!/usr/bin/python3
 
-from map import rooms
-from player import *
+from game_map import rooms
+from user import *
 from items import *
-from gameparser import *
+from filter_inputs import *
 
-def list_of_items(items):
-	item_list=[]
-	for x in items:
+def create_a_list_of_items(items):
+	"""
+	"""
+	list_of_items=[]
+	for i in items:
 		#for every x in items, looks up value for variable 'name'
-		item_list.append(x['name'])
+		list_of_items.append(i["name"])
 	#list is joined together with a comma and space
 	complete_list =', '.join(item_list)
 	return complete_list
 
-def print_room_items(rooms):
+def print_a_list_of_room_items(rooms):
 	#if there is something in the room display items
-	if len(list_of_items(room['items'])) != 0:
-		print('There is ' + list_of_items(room['items']) + " here.\n")
+	if len(create_a_list_of_items(room['items'])) != 0:
+		print('There is ' + create_a_list_of_items(room['items']) + " here for you to pick up.\n")
 
-def print_inventory_items(items):
+def print_a_list_of_inventory_items(items):
 	#if there are items in your inventory print items
 	if items != 0:
-		print('You have ' + list_of_items(items) + '.\n')
+		print('You are carrying ' + create_a_list_of_items(items) + '.\n')
 
-def print_room(room):
-	print('\n You are in ' + room['name'].upper() + '\n')
-	print(room['description'] + '\n')
-	print_room_items(room)
+def print_decription_current_room(room):
+	print()
+	print('You are currently in ' + room['name'].upper())
+	print()
+	print(room['description'])
+	print()
+	print_a_list_of_room_items(room)
 
 def exit_leads_to(exits, direction):
-	return rooms[exits[direction]]['name']
+	return rooms[exits[direction]]["name"]
 
 def print_exit(direction, leads_to):
 	print('Go ' + direction.upper() + ' to ' + leads_to + '.')
