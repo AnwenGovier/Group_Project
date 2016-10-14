@@ -155,10 +155,17 @@ def execute_command(command):
 pass
 #add this
 pass
-def intoxication(text):
-	#This function encrypts the description of the room if the player is intoxicated
-pass	
 
+def intoxication(text):
+	"""This function causes each character to have a 1/5 chance of being replaced by a random letter from the string of letters
+	
+	INSERT DOCTEST HERE
+	"""
+	import random
+	string_letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	text = "".join(i if random.randint(0,4) else random.choice(string_letters) for i in text)	
+
+	return text
 
 def menu(exits, room_items, inventory_items):
 pass
