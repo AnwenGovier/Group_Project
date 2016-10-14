@@ -162,7 +162,7 @@ def go(direction):
 	a direction"""
 	global current_room
 	if is_inputs_a_valid_exit(current_room['exits'], direction):
-		current_room = rooms[current_room['exits'][direction]]
+		current_room = room[current_room['exits'][direction]]
 	else:
 		print("You cannot go there!")
 
@@ -212,7 +212,7 @@ def execute_command(command):
 
 	if command[0] == 'go':
 		if len(command) > 1:
-			GO(command[1])
+			go(command[1])
 		else:
 			print("Go where?")
 
@@ -259,7 +259,7 @@ def menu(exits, room_items, inventory_items):
 	user_input = input(">> ")
 
 	#normalise the input
-	normalised_user_input = normalise_input(user_input)
+	normalised_user_input = user_input_normalisation(user_input)
 
 	return(normalised_user_input)
 
