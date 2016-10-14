@@ -272,15 +272,18 @@ def move_to_another_room(exits, direction):
 
 
 def main():
-	#display game status (room description, inventory etc)
-	print_description_current_room(current_room)
-	print_a_list_of_inventory_items(player_inventory)
 
-	#show the menu with possible actions and ask the player what they want to do
-	command = menu(current_room['exits'], current_room['items'], player_inventory)
+	#main game loop
+	while True:
+		#display game status (room description, inventory etc)
+		print_description_current_room(current_room)
+		print_a_list_of_inventory_items(player_inventory)
 
-	#execute the player's command
-	execute_command(command)
+		#show the menu with possible actions and ask the player what they want to do
+		command = menu(current_room['exits'], current_room['items'], player_inventory)
+
+		#execute the player's command
+		execute_command(command)
 
 if __name__ == "__main__":
 	main()
