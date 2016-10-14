@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
-from game_map import rooms
+from game_map import room
 from user import *
 from items import *
 from filter_inputs import *
+
 
 def create_a_list_of_items(items):
 	"""
@@ -23,7 +24,7 @@ def create_a_list_of_items(items):
 		#for every x in items, looks up value for variable 'name'
 		list_of_items.append(i["name"])
 	#list is joined together with a comma and space
-	complete_list =', '.join(item_list)
+	complete_list =', '.join(list_of_items)
 	return complete_list
 
 def print_a_list_of_room_items(rooms):
@@ -44,8 +45,8 @@ def print_a_list_of_room_items(rooms):
 	<BLANKLINE>
 
 	"""
-	if len(create_a_list_of_items(room['items'])) != 0:
-		print('There is ' + create_a_list_of_items(room['items']) + " here in the room.\n")
+	if len(create_a_list_of_items(rooms['items'])) != 0:
+		print('There is ' + create_a_list_of_items(rooms['items']) + " here in the room.\n")
 
 def print_a_list_of_inventory_items(items):
 	"""
@@ -94,7 +95,7 @@ def print_description_current_room(room):
     <BLANKLINE>
 	"""
 	
-	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] "\n" + print_a_list_of_room_items(room))
+	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n" + print_a_list_of_room_items(room))
 	
 
 def exit_entered_leads_to(exits, direction):
@@ -172,7 +173,7 @@ def take_an_item(item_id):
 
 	#small note:- i dont think the 'you cannot take this' works 
 
-	for item in in current_room['items']:
+	for item in current_room['items']:
 		if item_id != item['id'] and current_room['items']:
 			pass
 		elif item_id == item['id']:
@@ -249,16 +250,37 @@ def intoxication(text):
 	return text
 
 def menu(exits, room_items, inventory_items):
-pass
-#add this
+	"""This function calls the function """
+
+	#display menu
+	print_menu_of_items_and_exits(exits, room_items, inventory_items)
+
+	#read the player's input
+	user_input = input(">> ")
+
+	#normalise the input
+	normalised_user_input = normalise_input(user_input)
+
+	return(normalised_user_input)
+
 
 def move_to_another_room(exits, direction):
-pass
-#add this
+	"""This function returns the room into which the player 
+	will move to."""
+	return rooms[exits[direction]]
 
-def main_program():
-pass
-#add this
+
+
+def main():
+	#display game status (room description, inventory etc)
+	print_description_current_room(current_room)
+	print_a_list_of_inventory_items(inventory)
+
+	#show the menu with possible actions and ask the player what they want to do
+	command = menu(current_room['exits'], current_room['items'], inventory)
+
+	#execute the player's command
+	execute_command(command)
 
 if __name__ == "__main__":
 	main()

@@ -8,4 +8,4 @@ player = {"Name": "Change to a user input name", "Health": 100, "Alive": True, "
 
 
 #the room that the user is currently situated in
-users_current_room = rooms["Lobby"]
+current_room = room["Lobby"]
