@@ -93,12 +93,9 @@ def print_description_current_room(room):
 	You can go south to go back.
     <BLANKLINE>
 	"""
-	print()
-	print('You are currently in ' + room['name'].upper())
-	print()
-	print(room['description'])
-	print()
-	print_a_list_of_room_items(room)
+	
+	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] "\n" + print_a_list_of_room_items(room))
+	
 
 def exit_entered_leads_to(exits, direction):
 	"""
@@ -131,30 +128,114 @@ def print_the_exits_avaliable_to_user(direction, leads_to):
 	print('Go ' + direction.upper() + ' to ' + leads_to + '.')
 
 def print_menu_of_items_and_exits(exits, room_items, inventory_items):
-pass
-#add this
+	"""
+	Please add test
+	"""
+
+	print("You can:")
+	#show available exits to the user
+	for direction in exits:
+		#print the exit name and where it leads to
+		print_the_exits_avaliable_to_user(direction, exit_entered_leads_to(exits, direction))
+
+	#show available items that the user can take from room
+	for items in current_room['items']:
+		print('TAKE ' + items['id'].upper() + ' to take ' + items['name'] + '.')
+	
+	#show items that can be dropped by the user
+	for items in inventory_items:
+		items_list = list_of_items(inventory_items).split(', ')
+		for x in items_list:
+			item_name = items['name']
+			if x == item_name:
+				print('DROP ' + items['id'].upper() + ' to drop ' + items['name'] + '.')
 
 def is_inputs_a_valid_exit(exits, chosen_exit):
-pass
-#add this
+	"""
+	ADD TEST
+	"""
+	return chosen_exit in exits
 
 def go(direction):
-pass
-#add this
+	"""This function allows the player to traverse the world by inputting 
+	a direction"""
+	global current_room
+	if is_inputs_a_valid_exit(current_room['exits'], direction):
+		current_room = rooms[current_room['exits'][direction]]
+	else:
+		print("You cannot go there!")
+
 
 def take_an_item(item_id):
-#add this
-pass
+	"""This function allows the user to take an item from the
+	current room"""
+
+	#small note:- i dont think the 'you cannot take this' works 
+
+	for item in in current_room['items']:
+		if item_id != item['id'] and current_room['items']:
+			pass
+		elif item_id == item['id']:
+			current_room['items'].remove(item)
+			inventory.append(item)
+			print(item['name'] + " added to your inventory.")
+		else:
+			print("You cannot take that.")
+
+
 def drop_an_item(item_id):
-#add this
-pass
+	"""This function allows the user to drop an item in their inventory
+	in the room that they're currently in."""
+	for item in inventory:
+		if item_id != item['id'] and current_room['items']:
+			pass
+		elif item_id == item['id']:
+			inventory.remove(item)
+			current_room['items'].append(item)
+			print("You dropped " + item['name'] + ".")
+		else:
+			print("You cannot drop that.")
+
+
 def use_item(item_id):
+	"""NEED TO FIGURE OUT CODE FOR THIS"""
 #add this
 pass
+
+
 def execute_command(command):
-pass
-#add this
-pass
+	"""This function takes a command and, depending on the type of 
+	action, executes either execute_GO, TAKE, DROP, USE."""
+	if 0 == len(command):
+		return
+
+	if command[0] == 'go':
+		if len(command) > 1:
+			GO(command[1])
+		else:
+			print("Go where?")
+
+	elif command[0] == 'take':
+		if len(command) > 1:
+			take_an_item(command[1])
+		else:
+			print("Take what?")
+
+	elif command[0] == 'drop':
+		if len(command) > 1:
+			drop_an_item(command[1])
+		else:
+			print("Drop what?")
+
+	elif command[0] == 'use':
+		if len(command) > 1:
+			use_item(command[1])
+		else:
+			print("Use what?")
+
+	else:
+		print("This is an invalid command.")
+
 
 def intoxication(text):
 	"""This function causes each character to have a 1/5 chance of being replaced by a random letter from the string of letters
