@@ -4,6 +4,7 @@ from game_map import room
 from user import *
 from items import *
 from filter_inputs import *
+import random
 
 
 def create_a_list_of_items(items):
@@ -200,6 +201,10 @@ def drop_an_item(item_id):
 
 def use_item(item_id):
 	"""NEED TO FIGURE OUT CODE FOR THIS"""
+
+
+
+
 #add this
 pass
 
@@ -237,13 +242,35 @@ def execute_command(command):
 	else:
 		print("This is an invalid command.")
 
+def take_damage_player(player, damage):
+	"""This function deals damage to the player and updates their player stats.
+	If the player's health goes below 0 they will die and a message will appear
+	indicating this."""
+	player["health"] = player["health"] - damage
+	if player["health"] < 0:
+		player["health"] = 0
+		player["alive"] = False
+		print("You have died!")
+	else:
+		print("You are taken " + str(damage) + " damage.")
+
+
+def damage_dealt_by_npc(npc_id):
+	"""This function takes the players name and see how much damage they dealt.
+	The value returned is the amount of damage that has been dealt."""
+	"""
+	for x in npc:
+		if npc_id == npc['id']:
+			for 
+	"""
+
 
 def intoxication(text):
 	"""This function causes each character to have a 1/5 chance of being replaced by a random letter from the string of letters
-	
+
+
 	INSERT DOCTEST HERE
 	"""
-	import random
 	string_letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	text = "".join(i if random.randint(0,4) else random.choice(string_letters) for i in text)	
 
