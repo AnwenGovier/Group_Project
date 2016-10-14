@@ -95,7 +95,7 @@ def print_description_current_room(room):
     <BLANKLINE>
 	"""
 	
-	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n" + print_a_list_of_room_items(room))
+	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n" + str(print_a_list_of_room_items(room)))
 	
 
 def exit_entered_leads_to(exits, direction):
@@ -110,7 +110,7 @@ def exit_entered_leads_to(exits, direction):
 	>>>exit_entered_leads_to["Stairs to the roof"]["exits"], "east"
 	"roof"
 	"""
-	return rooms[exits[direction]]["name"]
+	return room[exits[direction]]["name"]
 
 def print_the_exits_avaliable_to_user(direction, leads_to):
 	"""
@@ -145,7 +145,7 @@ def print_menu_of_items_and_exits(exits, room_items, inventory_items):
 	
 	#show items that can be dropped by the user
 	for items in inventory_items:
-		items_list = list_of_items(inventory_items).split(', ')
+		items_list = create_a_list_of_items(inventory_items).split(', ')
 		for x in items_list:
 			item_name = items['name']
 			if x == item_name:
@@ -274,10 +274,10 @@ def move_to_another_room(exits, direction):
 def main():
 	#display game status (room description, inventory etc)
 	print_description_current_room(current_room)
-	print_a_list_of_inventory_items(inventory)
+	print_a_list_of_inventory_items(player_inventory)
 
 	#show the menu with possible actions and ask the player what they want to do
-	command = menu(current_room['exits'], current_room['items'], inventory)
+	command = menu(current_room['exits'], current_room['items'], player_inventory)
 
 	#execute the player's command
 	execute_command(command)
