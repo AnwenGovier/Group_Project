@@ -255,18 +255,38 @@ def take_damage_player(player, damage):
 		print("You are taken " + str(damage) + " damage.")
 
 
-def damage_dealt_by_npc(npc_id):
-	"""This function takes the players name and see how much damage they dealt.
+def damage_dealt_by_npc(npc):
+	"""This function takes the npc's name and see how much damage they deal.
 	The value returned is the amount of damage that has been dealt."""
-	"""
-	for x in npc:
-		if npc_id == npc['id']:
-			for 
-	"""
+	
+	npc_damage = ''
+	for y in room:
+		npc_list = room[y]['npc']
+		for x in npc_list:
+			npc_state = x['npc_state']
+			for q in npc_state:
+				npc_damage = q['damage']
+				return npc_damage
 
+
+def npc_name(rooms):
+	"""This function returns the npc dictionary for an npc in a particular room.
+	This looks in rooms, looks at npc's in room, looks at npcs attributes and 
+	returns their name."""
+
+	
+	npc_name= ''
+	npc_list= ''
+	for y in room:
+		npc_list = room[y]['npc']
+		for x in npc_list:
+			npc_name = x['name']
+			return npc_name
+	
 
 def intoxication(text):
-	"""This function causes each character to have a 1/5 chance of being replaced by a random letter from the string of letters
+	"""
+	This function causes each character to have a 1/5 chance of being replaced by a random letter from the string of letters
 
 
 	INSERT DOCTEST HERE
@@ -299,15 +319,15 @@ def move_to_another_room(exits, direction):
 
 
 def main():
-
+	
 	#main game loop
 	while True:
 		#display game status (room description, inventory etc)
 		print_description_current_room(current_room)
-		print_a_list_of_inventory_items(player_inventory)
+		print_a_list_of_inventory_items(inventory)
 
 		#show the menu with possible actions and ask the player what they want to do
-		command = menu(current_room['exits'], current_room['items'], player_inventory)
+		command = menu(current_room['exits'], current_room['items'], inventory)
 
 		#execute the player's command
 		execute_command(command)

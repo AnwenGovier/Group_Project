@@ -1,6 +1,6 @@
 #kirril, 2 bad guys, bar man, hostages
 #id, name, description, item, dialogue, can_attack, player state
-import items *
+
 
 npc_enemy_2nd_floor = {
 	"id": "2nd floor enemy",
@@ -31,7 +31,7 @@ npc_enemy_1st_floor = {
 
 	"can_attack": True,
 
-	"npc_state": = {"health": 100, "damage": 10, "alive": True}
+	"npc_state": {"health": 100, "damage": 10, "alive": True}
 }
 
 npc_bar_man = {
@@ -47,7 +47,7 @@ npc_bar_man = {
 
 	"can_attack": False,
 
-	"npc_state": = {}
+	"npc_state": {}
 }
 
 npc_hostage = {
@@ -63,7 +63,7 @@ npc_hostage = {
 
 	"can_attack": False,
 
-	"npc_state": = {}
+	"npc_state": {}
 
 }
 
@@ -80,5 +80,5 @@ npc_boss = {
 
 	"can_attack": True,
 
-	"npc_state": = {"health": 200, "damage": 25, "alive": True}
+	"npc_state": {"health": 200, "damage": 25, "alive": True}
 }
