@@ -321,10 +321,22 @@ def move_to_another_room(exits, direction):
 	will move to."""
 	return room[exits[direction]]
 
+def stats(player, input_name):
+	"""This function displays the players stats."""
+	print(" " + "_" * 25)
+	for x in player_stats:
+		if x == 'Name':
+			player['Name'] = input_name
+		print("| " + x + ": " + str(player[x]) + (" " * (22 - (len(x) + len(str(player[x]))))) + "|")
+	
+	print("|" + "_" * 25 + "|")
+	print(input("Press the enter key to continue."))
 
 
 def main():
-	
+	prompt_user = input("Please enter your name: ")
+	stats(player, prompt_user)
+
 	#main game loop
 	while True:
 		#display game status (room description, inventory etc)
