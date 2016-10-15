@@ -457,5 +457,5 @@ room = {
 	"More of the maze" : maze_15,
 	"Secret door" : secret_door,
 	"Stairs to the roof" : stairs_to_roof,
-	"Roof" : room_roof,
+	"Roof" : room_roof
 }

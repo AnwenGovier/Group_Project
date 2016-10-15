@@ -252,10 +252,10 @@ def take_damage_player(player, damage):
 		player["alive"] = False
 		print("You have died!")
 	else:
-		print("You are taken " + str(damage) + " damage.")
+		print("You have taken " + str(damage) + " damage.")
 
 
-def damage_dealt_by_npc(npc):
+def damage_dealt_by_npc(room):
 	"""This function takes the npc's name and see how much damage they deal.
 	The value returned is the amount of damage that has been dealt."""
 	
@@ -268,8 +268,7 @@ def damage_dealt_by_npc(npc):
 				npc_damage = q['damage']
 				return npc_damage
 
-
-def npc_name(rooms):
+def npc_name(room):
 	"""This function returns the npc dictionary for an npc in a particular room.
 	This looks in rooms, looks at npc's in room, looks at npcs attributes and 
 	returns their name."""
@@ -283,6 +282,12 @@ def npc_name(rooms):
 			npc_name = x['name']
 			return npc_name
 	
+def item_damage(item_id):
+	"""This function returns the damage value for an item."""
+	for x in items:
+		if item_id == items['id']:
+			print(x)
+
 
 def intoxication(text):
 	"""
@@ -314,7 +319,7 @@ def menu(exits, room_items, inventory_items):
 def move_to_another_room(exits, direction):
 	"""This function returns the room into which the player 
 	will move to."""
-	return rooms[exits[direction]]
+	return room[exits[direction]]
 
 
 

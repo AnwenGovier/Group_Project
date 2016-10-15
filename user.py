@@ -1,5 +1,5 @@
 from items import *
-from game_map import *
+from game_map import room
 
 #contains all the items that the user is carrying at any one time
 inventory = [item_pistol]
