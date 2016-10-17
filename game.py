@@ -46,21 +46,28 @@ def print_a_list_of_room_items(rooms):
 	<BLANKLINE>
 
 	"""
-	if len(create_a_list_of_items(rooms['items'])) != 0:
-		print('There is ' + create_a_list_of_items(rooms['items']) + " here in the room.\n")
+	list_of_items = room["items"]
+	if len(list_of_items) == 0:
+		return;
+	else:
+		print("There is " + create_a_list_of_items(room["items"]) + " here in the room.")
+		print("")
 
 def print_a_list_of_inventory_items(items):
-	"""
-	The following code in this function displays the users inventory items exactly how the 
+	""" The following code in this function displays the users inventory items exactly how the 
 	items are displayed in the room in print_a_list_of_room_items(rooms).
 	The difference is the words that are printed with the items.
 	e.g.
 	>>> print_a_list_of_inventory_items(inventory)
 	(no output)
     """
-	if items != 0:
-		print('You are carrying ' + create_a_list_of_items(items) + '.\n')
-
+	list_of_items_in_inventory = create_a_list_of_items(items)
+	if len(list_of_items_in_inventory) == 0:
+		return;
+	else:
+		print("You have " + create_a_list_of_items(items) +"." )
+		print()
+            
 def print_description_current_room(room):
 	"""
 	This function displays the description and name that corresponds to the users
