@@ -178,7 +178,9 @@ def go(direction):
 			os.system("battle.py")
 			#exits program - player died and chose not to continue
 			exit()
-
+		if current_room == room["Stairs to first floor"]:
+			os.system("stairwellbattle.py")
+			return current_room
 	else:
 		print("You cannot go there!")
 
