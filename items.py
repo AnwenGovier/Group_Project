@@ -43,7 +43,7 @@ item_kitchen_knife = {
 
 	"name": "a kitchen knife",
 
-	"damage": 0,
+	"damage": 30,
 
 	"heal": 0,
 
