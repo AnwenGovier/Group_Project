@@ -59,7 +59,7 @@ item_alcohol = {
 
 	"damage": 0,
 
-	"heal": -5,
+	"health": -5,
 
 	"description":
 	"""A refreshing alcoholic drink. One sip and you will be intoxicated."""	

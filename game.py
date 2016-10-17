@@ -186,7 +186,11 @@ def locked(current_room):
 
 
 #def execute_program(current_room):
+	"""This function will exectute another program if a certain room is entered. If there is 
+	no program attatched to that room nothing will be executed and the current room is 
+	returned."""
 
+	
 
 
 def take_an_item(item_id):
