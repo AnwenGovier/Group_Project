@@ -5,7 +5,7 @@ from user import *
 from items import *
 from filter_inputs import *
 import random
-
+import os
 
 def create_a_list_of_items(items):
 	"""
@@ -164,6 +164,9 @@ def go(direction):
 	global current_room
 	if is_inputs_a_valid_exit(current_room['exits'], direction):
 		current_room = room[current_room['exits'][direction]]
+		if current_room == room["The roof"]:
+			os.system("battle.py")
+			exit()
 	else:
 		print("You cannot go there!")
 

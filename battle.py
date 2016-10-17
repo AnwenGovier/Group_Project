@@ -170,6 +170,16 @@ def Ending(HeroPlayerHealth):
 		print("\n\n\n\n\n Press any key to continue. . . ")
 		getch()
 		os.system("cls")
+		while True:
+			print ("Do you want to play again? (Y/N)")
+			user_input = input().lower() 
+			if user_input == "y":
+				os.system("game.py")
+			elif user_input == "n":
+				exit()
+			else: 
+				os.system("cls")
+				return False
 		
 	else:
 		os.system("cls")
@@ -213,4 +223,5 @@ while (HeroPlayerHealth > 0 and MonsterKirillHealth > 0):
 
 	if (HeroPlayerHealth <= 0):
 		Ending(HeroPlayerHealth)
+
 		break
