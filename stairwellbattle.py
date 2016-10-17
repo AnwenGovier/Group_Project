@@ -191,6 +191,7 @@ def Ending(HeroPlayerHealth):
 		os.system("cls")
 
 
+
 ##################################################################################################
 
 while (HeroPlayerHealth > 0 and MonsterBernardHealth > 0):
