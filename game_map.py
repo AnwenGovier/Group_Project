@@ -22,7 +22,7 @@ room_kitchen = {
 	"description" : """
 You are standing in the hotel kitchen. 
 Chefs and waiters work busily around you, preparing dishes
-for the day. No one stops to notice you. 
+for the day. No one stops to notice you. The head chef is wearing a purple hat.
 You can go north to the laundry room, south to go back to the 
 lobby or west to the bar.""",
 	"exits" : {"north" : "Laundry", "west" : "Bar", "south" : "Lobby"},
