@@ -39,7 +39,7 @@ item_broom = {
 }
 
 item_kitchen_knife = {
-	"id": "kitchen knife",
+	"id": "knife",
 
 	"name": "a kitchen knife",
 
@@ -79,7 +79,7 @@ item_tablets = {
 }
 
 item_secret_key = {
-	"id": "secret key",
+	"id": "secret-key",
 
 	"name": "a secret key",
 
@@ -93,7 +93,7 @@ item_secret_key = {
 
 
 item_room5_key = {
-	"id": "room 5 key",
+	"id": "key-5",
 
 	"name": "a key for room 5",
 
@@ -107,7 +107,7 @@ item_room5_key = {
 }
 
 item_room3_key = {
-	"id": "room 3 key",
+	"id": "key-3",
 
 	"name": "a key for room 3",
 
@@ -120,7 +120,7 @@ item_room3_key = {
 }
 
 item_second_level_key = {
-	"id": "second level key",
+	"id": "key-2",
 
 	"name": "a key for the second level",
 

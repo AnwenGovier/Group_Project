@@ -163,12 +163,30 @@ def go(direction):
 	a direction"""
 	global current_room
 	if is_inputs_a_valid_exit(current_room['exits'], direction):
-		current_room = room[current_room['exits'][direction]]
+		current_room_check = room[current_room['exits'][direction]]
+		#checks to see if the room is locked
+		locked(current_room_check)
 		if current_room == room["The roof"]:
+			#runs another program
 			os.system("battle.py")
+			#exits program - player died and chose not to continue
 			exit()
+
 	else:
 		print("You cannot go there!")
+
+def locked(current_room):
+	"""This function checks if the room is locked or not"""
+
+	for x in current_room:
+		if x == 'locked':
+			if current_room['locked'] == True:
+				print("Aks question")
+				current_room['locked'] == False
+
+
+#def execute_program(current_room):
+
 
 
 def take_an_item(item_id):
