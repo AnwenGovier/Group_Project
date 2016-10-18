@@ -363,6 +363,10 @@ def execute_program(current_room):
 		#runs another program
 		os.system("battle.py")
 		#exits program - player died and chose not to continue
+		os.system(cls)
+		print("Thank you for playing! :D")
+		getch()
+
 		exit()
 
 	if current_room == room["Stairs to first floor"]:	
@@ -372,13 +376,27 @@ def execute_program(current_room):
 			else:
 				os.system("stairwellbattle.py")
 				completed_fights["first stairs fight"] = True
+				return current_roomx
+		
+	if current_room == room["the stairs to the second floor"]:
+		for x in completed_fights:
+			if completed_fights["second stairs fight"] == True:
+				return current_room
+			else:
+				os.system("2nfloorbattle.py")
+				completed_fights["second stairs fight"] = True
 				return current_room
 
-		
-
 	if current_room == room["Fight"]:
-		os.system("boxers.py")
-		return current_room
+		for x in completed_fights:
+			if completed_fights['fight'] == True:
+				return current_room
+			else:
+				os.system("boxers.py")
+				completed_fights['fight'] = True
+				return current_room
+
+
 
 	
 def is_item_in_list(item, items):
