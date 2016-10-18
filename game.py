@@ -36,12 +36,15 @@ def print_a_list_of_room_items(room):
 	is located in the game_map.py amd the definition and name is located in the items.py file.
 	The items are displayed in a list where each item is seperated using a comma and a space.
 	e.g.
-	>>>print_a_list_of_items(rooms["Bar"])
-	There is a biscuit, an alcoholic drink here in the room.
+	>>> print_a_list_of_room_items(room["Bar"])
+	There is an alcoholic drink here in the room.
 	<BLANKLINE>
-	>>>print_a_list_of_items(rooms["Alley"])
-	(no output)
-	>>>print_a_list_of_items(rooms["Kitchen"])
+
+	>>> print_a_list_of_room_items(room["Alley"])
+	There is a biscuit here in the room.
+	<BLANKLINE>
+
+	>>> print_a_list_of_room_items(room["Kitchen"])
 	There is a kitchen knife here in the room.
 	<BLANKLINE>
 
@@ -57,7 +60,14 @@ def print_a_list_of_inventory_items(items):
 	""" The following code in this function displays the users inventory items exactly how the 
 	items are displayed in the room in print_a_list_of_room_items(rooms).
 	The difference is the words that are printed with the items.
+<<<<<<< HEAD
 	
+=======
+	e.g.
+	>>> print_a_list_of_inventory_items(inventory)
+	You have a pistol.
+	<BLANKLINE>
+>>>>>>> 63cb7995a8f272f807ecaab40b7881d2d19c7921
     """
 	list_of_items_in_inventory = create_a_list_of_items(items)
 	if len(list_of_items_in_inventory) == 0:
@@ -73,66 +83,58 @@ def print_description_current_room(room):
 	and after it. The description of the room is displayed next with a blank line 
 	following afterwards. Finally a list of the items in the room is displayed with a 
 	blank line afterwards.
-	e.g.
-	>>>print_description_current_room(rooms["Alley"])
-	<BLANKLINE>
-    THE BACK ALLEY
-    <BLANKLINE>
-    You are now standing in a back alley behind the hotel.
-	Dustbins line the street giving off a foul odour of waste and decay. 
-	You can go south to go back to the Laundry room.
-    <BLANKLINE>
-    
-    >>>print_description_current_room(rooms["Room 1"])
+	For example the description for Room 1 is:
 	<BLANKLINE>
     ROOM ONE
     <BLANKLINE>
-    You are now standing in a deserted bedroom. Clothes are dtrung everywhere, furniture knocked over. 
+    You are now standing in a deserted bedroom. Clothes are strung everywhere, furniture knocked over. 
 	Whoever stayed here left in a hurry...
     <BLANKLINE>
-    There is a pistol, a key for the second level here in the room.
-
-    >>>print_description_current_room(rooms["Further in"])
-	<BLANKLINE>
-    FURTHER IN
-    <BLANKLINE>
-    A plaster board wall blocks your path. 
-	You can go south to go back.
-    <BLANKLINE>
+    There is a pistol, a key for the second level here in the room.    
 	"""
+<<<<<<< HEAD
 	
 
 	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n")
 	print_a_list_of_room_items(room)
 
+=======
+	print('')
+	print(room["name"].upper())
+	print('')
+	print(room["description"])
+	print('')
+	print_a_list_of_room_items(room)
+	
+>>>>>>> 63cb7995a8f272f807ecaab40b7881d2d19c7921
 
 def exit_entered_leads_to(exits, direction):
 	"""
 	This function uses a dictionary of exits and a direction (an exit made avaliable
 	to the user). It returns the name of the room that they will go to next.
 	e.g.
-	>>>exit_entered_leads_to["Lobby"]["exits"], "west"
-	"the hotel bar"
-	>>>exit_entered_leads_to["Laundry"]["exits"], "north"
-	"the back alley"
-	>>>exit_entered_leads_to["Stairs to the roof"]["exits"], "east"
-	"roof"
+	>>> exit_entered_leads_to(room["Lobby"]["exits"], "west")
+	'the hotel bar'
+	>>> exit_entered_leads_to(room["Laundry"]["exits"], "north")
+	'the back alley'
+	>>> exit_entered_leads_to(room["Stairs to the roof"]["exits"], "east")
+	'the roof'
 	"""
 	return room[exits[direction]]["name"]
 
 def print_the_exits_avaliable_to_user(direction, leads_to):
 	"""
 	The code in this function prints a menu of exits that are avaliable
-	to the user. It uses a direction and the name of the room to do this.
+	to the user. It uses a direction and the name of the next room to do this.
 	They should be printed like this:
 	GO <EXIT NAME> to <leads to>.
 	e.g.
-	>>>print_the_exits_avaliable_to_user("east", "Lobby")
-	GO EAST to the hotel lobby.
-	>>>print_the_exits_avaliable_to_user("north", "Laundry")
-	GO EAST to the laundry room.
-	>>>print_the_exits_avaliable_to_user("west", "Room 1")
-	GO WEST to room one.
+	>>> print_the_exits_avaliable_to_user("east", "Lobby")
+	Go EAST to Lobby.
+
+	>>> print_the_exits_avaliable_to_user("north", "Laundry")
+	Go NORTH to Laundry.
+
 	"""
 	print('Go ' + direction.upper() + ' to ' + leads_to + '.')
 
@@ -146,7 +148,7 @@ def print_menu_of_items_and_exits(exits, room_items, inventory_items):
 	DROP <ITEM ID> to drop <item name>.
 	It splits all of the items in the inventory so that they can be displayed individually to the user.
 	e.g.
-	The actions avaliable to the player in the batr are as follows:
+	The actions avaliable to the player in the bar are as follows:
 	You can:
 	GO EAST to the lobby.
 	GO NORTH to the kitchen.
@@ -184,11 +186,11 @@ def is_inputs_a_valid_exit(exits, chosen_exit):
 	It is assumed that the input has already been normalised before this function is
 	run.
 	e.g.
-	>>> is_inputs_a_valid_exit(rooms["Lobby"]["exits"], "west")
+	>>> is_inputs_a_valid_exit(room["Lobby"]["exits"], "west")
 	True
-	>>> is_inputs_a_valid_exit(rooms["Kitchen"]["exits"], "east")
+	>>> is_inputs_a_valid_exit(room["Kitchen"]["exits"], "east")
 	False
-	>>> is_inputs_a_valid_exit(rooms["Kitchen"]["exits"], "south")
+	>>> is_inputs_a_valid_exit(room["Kitchen"]["exits"], "south")
 	True
 	"""
 	return chosen_exit in exits
@@ -209,11 +211,23 @@ def go(direction):
 
 	global current_room
 	if is_inputs_a_valid_exit(current_room['exits'], direction):
-		current_room = room[current_room['exits'][direction]]
+		current_room_check = room[current_room['exits'][direction]]
 		
-		#checks to see if another program needs to be executed
-		execute_program(current_room)
+		#checks to see if the room is locked
+		room_status = locked(current_room_check)
 
+		#if room_status returns True then the room has been unlocked
+		if room_status:
+			current_room = current_room_check
+			execute_program(current_room)
+		else:
+			print("Door remains locked!")
+			return
+
+		#checks to see if another program needs to be executed
+		#execute_program(current_room)
+
+<<<<<<< HEAD
 		#checks to see if the room is locked
 		room_status = locked(current_room)
 		if room_status == 'False':
@@ -229,119 +243,115 @@ def go(direction):
 			os.system("stairwellbattle.py")
 			return current_room
 
+=======
+>>>>>>> 63cb7995a8f272f807ecaab40b7881d2d19c7921
 	else:
 		print("You cannot go there!")
 
 
 def question(current_room):
 	"""This function will ask the user a question that will need to be answered 
-	correctly to unlock the room.
-	If the answer is incorrect then they cannot open the door"""
-	if current_room == room["Stairs to first floor"]:
+	correctly to unlock the room"""
+
+	if current_room['name'] == "the stairs to the first floor":
 		#This question is number 1 
 		print("What colour is the chef's hat?")
-		print("Red \n", "Purple\n", "Green\n", "White\n", "To exit question enter: EXIT")
+		print("Red", "\nPurple", "\nGreen", "\nWhite", "\nTo exit question enter: EXIT")
 		return answer(1, current_room)
 
-	elif current_room == room["Room 3"]:
+	elif current_room['name'] == room["Room 3"]:
 		#This question is number 2
 		print("What item is found in the ally?")
-		print("Biscuit\n", "Broom\n", "kitchen-knife\n", "Phone\n", "To exit question enter: EXIT")
+		print("Biscuit", "\nBroom", "\nkitchen-knife", "\nPhone", "\nTo exit question enter: EXIT")
 		return answer(2, current_room)
 
-	elif current_room == room["Room 5"]:
+	elif current_room['name'] == room["Room 5"]:
 		#This question is number 3
 		print("What is the name of the bar tender?")
-		print("Walter\n", "Ben\n", "Gerald\n", "Larry\n", "To exit question enter: EXIT")
+		print("Walter", "\nBen", "\nGerald", "\nLarry", "\nTo exit question enter: EXIT")
 		return answer(3, current_room)
 
-	elif current_room == room["Room 6"]:
+	elif current_room['name'] == room["Room 6"]:
 		#This question is number 4
 		print("What colour is the drink being served in the bar?")
-		print("Pink\n", "Blue\n", "Brown\n", "To exit question enter: EXIT")
+		print("Pink", "\nBlue", "\nBrown", "\nTo exit question enter: EXIT")
 		return answer(4, current_room)
 
-	elif current_room == room["Stairs to second floor"]:
+	elif current_room['name'] == room["Stairs to second floor"]:
 		#This question is number 5
 		print("What is Mickeys favourite colour?")
-		print("Red\n", "Purple\n", "Yellow\n", "Pink\n", "To exit question enter: EXIT")
+		print("Red", "\nPurple", "\nYellow", "\nPink", "\nTo exit question enter: EXIT")
 		return answer(5, current_room)
 
-	elif current_room == room["Secret door"]:
+	elif current_room['name'] == room["Secret door"]:
 		#This question is number 6
 		print("What is in the laundry?")
-		print("Spaghetti\n", "Shoes\n", "Bucket\n", "Shirts\n", "To exit question enter: EXIT")
+		print("Spaghetti", "\nShoes", "\nBucket", "\nShirts", "\nTo exit question enter: EXIT")
 		return answer(6, current_room)
 
 def answer(question_number, current_room):
-	'''
-	This function checks to see if the users input matches the correct answer. If it does then they
-	are allowed to move into the room or up the stairs. If it is not correct then the following is 
-	displayed:
-	That is the wrong answer, try again!
-	'''
-	if question_number == '1':
+	if question_number == 1:
+
 		while True:
 			user_ans = input(">>")
 			user_ans = user_input_normalisation(user_ans)
-			if user_ans == 'purple':
+			if user_ans == ['purple']:
 				return True
 				break
-			elif user_ans == 'exit':
+			elif user_ans == ['exit']:
 				break
 			else:
 				print("That is the wrong answer, try again!")
 
-	elif question_number == '2':
+	elif question_number == 2:
 		while True:
 			user_ans = input(">>")
 			user_ans = user_input_normalisation(user_ans)
-			if user_ans == 'biscuit':
+			if user_ans == ['biscuit']:
 				return True
 				break
-			elif user_ans == 'exit':
+			elif user_ans == ['exit']:
 				break
 
-	elif question_number == '3':
+	elif question_number == 3:
 		while True:
 			user_ans = input(">>")
 			user_ans = user_input_normalisation(user_ans)
-			if user_ans == 'larry':
+			if user_ans == ['larry']:
 				return True
 				break
-			elif user_ans == 'exit':
+			elif user_ans == ['exit']:
 				break
 
-	elif question_number == '4':
+	elif question_number == 4:
 		while True:
 			user_ans = input(">>")
 			user_ans = user_input_normalisation(user_ans)
-			if user_ans == 'blue':
+			if user_ans == ['blue']:
 				return True
 				break
-			elif user_ans == 'exit':
+			elif user_ans == ['exit']:
 				break
 
-	elif question_number == '5':
+	elif question_number == 5:
 		while True:
 			user_ans = input(">>")
 			user_ans = user_input_normalisation(user_ans)
-			if user_ans == 'red':
+			if user_ans == ['red']:
 				return True
 				break
-			elif user_ans == 'exit':
+			elif user_ans == ['exit']:
 				break
 
-	elif question_number == '6':
+	elif question_number == 6:
 		while True:
 			user_ans = input(">>")
 			user_ans = user_input_normalisation(user_ans)
-			if user_ans == 'spaghetti':
+			if user_ans == ['spagetti']:
 				return True
 				break
-			elif user_ans == 'exit':
+			elif user_ans == ['exit']:
 				break
-
 
 def locked(current_room):
 	"""This function checks if the users current room is locked or not.
@@ -353,16 +363,38 @@ def locked(current_room):
 			if current_room['locked'] == True:
 				if question(current_room):
 					current_room['locked'] == False
+					return True
 				else:
 					return False
-
+	return True
 
 def execute_program(current_room):
 	"""
 	This function will exectute another program if a certain room is entered. If there is 
 	no program attatched to that room nothing will be executed and the current room is 
-	returned.
-	"""
+	returned"""
+
+	#Show levels as not being completed, once completed; set == True
+	stairs_first_floor_fight = False
+
+
+	if current_room == room["The roof"]:
+		#runs another program
+		os.system("battle.py")
+		#exits program - player died and chose not to continue
+		exit()
+
+	if stairs_first_floor_fight == False:
+		if current_room == room["Stairs to first floor"]:
+			os.system("stairwellbattle.py")
+			stairs_first_floor_fight = True 
+			return current_room
+	else:
+		return current_room
+
+	if current_room == room["Fight"]:
+		os.system("boxers.py")
+		return current_room
 
 	
 def is_item_in_list(item, items):
@@ -437,7 +469,7 @@ def take_an_item(item_id):
 		remove_item_from_current_room(item_id, current_room["items"])
 		return inventory
 	else:
-		print("You cannot drop that.")
+		print("You cannot take that.")
 
 def drop_an_item(item_id):
 	"""
@@ -621,7 +653,7 @@ def menu(exits, room_items, inventory_items):
 	print_menu_of_items_and_exits(exits, room_items, inventory_items)
 
 	#read the player's input
-	user_input = input(">> ")
+	user_input = input('>> ')
 
 	#normalise the input
 	normalised_user_input = user_input_normalisation(user_input)
@@ -634,9 +666,9 @@ def move_to_another_room(exits, direction):
 	This function returns the room into which the player 
 	will move to if the input contains a valid exit.
 	e.g.
-	>>> move_to_another_room(rooms["Lobby"]["exits"], "north") == rooms["Kitchen"]
+	>>> move_to_another_room(room["Lobby"]["exits"], "north") == room["Kitchen"]
 	True
-	>>> move_to_another_room(rooms["Bar"]["exits"], "north") == rooms["Lobby"]
+	>>> move_to_another_room(room["Bar"]["exits"], "north") == room["Lobby"]
 	False
 	"""
 	return room[exits[direction]]

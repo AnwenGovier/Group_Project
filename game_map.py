@@ -46,7 +46,7 @@ could talk to the waiter. """,
 }
 
 stairs_to_first = {
-	"name": " the stairs to the first floor",
+	"name": "the stairs to the first floor",
 	"description" : """
 The stairs ahead will take you to the first floor.
 One of the Python's men is guarding the stairs and will 
@@ -77,12 +77,22 @@ room_alley = {
 You are now standing in a back alley behind the hotel.
 Dustbins line the street giving off a foul odour of waste and decay. 
 You can go south to go back to the Laundry room. """,
-	"exits" : {"south" : "Laundry"},
+	"exits" : {"south" : "Laundry", "north" : "Fight"},
 	"items" : [item_biscuit],
 	"locked" : False,
 	"npc": []
 }
 
+room_fight_club = {
+	"name": "the fight club",
+	"description" : """
+You are standing in the fight club.
+You have won all of your fights.""",
+	"exits" : {"south" : "Alley"},
+	"items" : [],
+	"locked" : False,
+	"npc": []
+}
 #first floor rooms
 first_floor_hallway = {
 	"name": "the first floor hallway",
@@ -112,8 +122,7 @@ to the begining of the hallway. You can also go north to look at rooms 3 and 4. 
 room_1 = {
 	"name": "room one",
 	"description" : """
-You are now standing in a deserted bedroom. Clothes are dtrung everywhere, furniture knocked over. 
-Whoever stayed here left in a hurry... """,
+You are now standing in a deserted bedroom. Clothes are strung everywhere, furniture knocked over. Whoever stayed here left in a hurry... """,
 	"exits" : {"east" : "Rooms 1 and 2" },
 	"items" : [item_pistol, item_second_level_key],
 	"locked" : False,
@@ -150,7 +159,7 @@ room_3 = {
 	"description" : """
 You enter this room to find 4 hostages - tied up with rope, their mouths stuffed with towels. 
 A men stands guard over them, his gun pointed at them. A keycard hangs from man's belt
-You can go east back to the hallway or you can figh the man and save the hostages """,
+You can go east back to the hallway or you can fight the man and save the hostages """,
 	"exits" : {"east" : "Rooms 3 and 4"},
 	"items" : [item_secret_key],
 	"locked" : True,
@@ -428,6 +437,7 @@ room = {
 	"Stairs to first floor" : stairs_to_first,
 	"Laundry" : room_laundry,
 	"Alley" : room_alley,
+	"Fight" : room_fight_club,
 	"Hallway" : first_floor_hallway,
 	"Rooms 1 and 2" : rooms_1_and_2,
 	"Room 1" : room_1,

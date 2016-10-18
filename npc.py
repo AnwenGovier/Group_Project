@@ -1,4 +1,4 @@
-#kirril, 2 bad guys, bar man, hostages
+#2 bad guys, bar man, hostages
 #id, name, description, item, dialogue, can_attack, player state
 
 
@@ -8,7 +8,10 @@ npc_enemy_2nd_floor = {
 	"name": "Richard",
 
 	"description": 
-	"""Richard needs a description""",
+	"""
+	Richard, despite his seemingly higher rank within the organisation, 
+	is rather dimwitted and only achieved his rank due to dubious family connections to the establishment
+	""",
 
 	"dialogue": 
 	"""Code me some dialogue please""",
@@ -24,7 +27,7 @@ npc_enemy_1st_floor = {
 	"name": "Bernard",
 
 	"description":
-	"""Add""",
+	"""Bernard is a common or garden lackey, capable of getting in the way and looking menacing but not much more""",
 
 	"dialogue": 
 	"""ADD""",
@@ -40,7 +43,10 @@ npc_bar_man = {
 	"name": "Larry",
 
 	"description":
-	"""ADD""",
+	"""
+	Larry the bar tender is a student with an evening job, 
+	and always eager to assist a patron of the bar in getting as drunk as possible
+	""",
 
 	"dialogue":
 	""" ADD """,
@@ -56,7 +62,10 @@ npc_hostage = {
 	"name": "Gregg", 
 
 	"desciption": 
-	"""ADD""",
+	"""
+	Gregg isnt really sure whats happening, he is much more use to being the one tied up, but
+	in this case he is just standing guard and trusting his superiors.
+	""",
 
 	"dialogue":
 	""" ADD """,
@@ -65,20 +74,4 @@ npc_hostage = {
 
 	"npc_state": {}
 
-}
-
-npc_boss = {
-	"id": "Boss",
-
-	"name": "Sam",
-
-	"description":
-	"""ADD""",
-
-	"dialogue":
-	""" ADD """,
-
-	"can_attack": True,
-
-	"npc_state": {"health": 200, "damage": 25, "alive": True}
 }
