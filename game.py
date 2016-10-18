@@ -278,7 +278,6 @@ def answer(question_number, current_room):
 		while True:
 			user_ans = input(">>")
 			user_ans = user_input_normalisation(user_ans)
-			print(user_ans)
 			if user_ans == ['purple']:
 				return True
 				break
