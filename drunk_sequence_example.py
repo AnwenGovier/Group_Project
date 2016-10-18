@@ -5,11 +5,11 @@ import random
 
 def drunk(text):
 	drunk_talk = intoxacation(text)
-	for color in('12', '45', 'F0', '2E'):
+	for color in('12', '45', 'F0', '2E', '0F'):
 		call('cls', shell = True)
 		call('color ' + color, shell = True)
 		print(drunk_talk)
-		time.sleep(0.5)
+		time.sleep(0.3)
 
 
 
