@@ -35,12 +35,12 @@ room_bar = {
 	"name": "the hotel bar",
 	"description" : """
 You are now standing by the hotel's bar. Its deserted. 
-A waiter stands polishing glasses behind the bar, humming to 
-an old radio. 
+A waiter, Larry stands polishing glasses behind the bar, humming to 
+an old radio. A blue drink sits on the counter top.
 You can go east to the lobby, north to the kitchen or you 
 could talk to the waiter. """,
 	"exits" : {"east" : "Lobby", "north" : "Kitchen"},
-	"items" : [item_biscuit, item_alcohol],
+	"items" : [item_alcohol],
 	"locked" : False,
 	"npc": [npc_bar_man]
 }
@@ -63,7 +63,7 @@ room_laundry = {
 	"name": "the laundry room",
 	"description" : """
 You are now standing in the laundry room in the hotel. 
-Tumble dryers spin around you. No one is here.
+Tumble dryers spinning spaghetti stand around you. No one is here.
 You can go north to the back alley or south to the kitchen. """,
 	"exits" : {"north" : "Alley", "south" : "Kitchen"},
 	"items" : [item_broom],
@@ -78,7 +78,7 @@ You are now standing in a back alley behind the hotel.
 Dustbins line the street giving off a foul odour of waste and decay. 
 You can go south to go back to the Laundry room. """,
 	"exits" : {"south" : "Laundry"},
-	"items" : [],
+	"items" : [item_biscuit],
 	"locked" : False,
 	"npc": []
 }
