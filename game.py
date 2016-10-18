@@ -481,7 +481,8 @@ def use_item_in_inventory(item_id, items):
 		if item_id == id:
 			player["Health"] = player["Health"] + i["health"]
 			# CAN'T GET THIS TO WORK
-			if id == item_alcohol:
+			if item_alcohol == id:
+				player["Intoxicated"] == True
 				intoxication(text)
 				return
 		else:
@@ -679,7 +680,12 @@ def move_to_another_room(exits, direction):
 	>>> move_to_another_room(room["Bar"]["exits"], "north") == room["Lobby"]
 	False
 	"""
-	return room[exits[direction]]
+	global player
+	if player["Intoxicated"] == True:
+		player["Intoxicated"] == False
+		return room[exits[direction]]
+	else:	
+		return room[exits[direction]]
 
 def stats(player, input_name):
 	"""
