@@ -77,12 +77,22 @@ room_alley = {
 You are now standing in a back alley behind the hotel.
 Dustbins line the street giving off a foul odour of waste and decay. 
 You can go south to go back to the Laundry room. """,
-	"exits" : {"south" : "Laundry"},
+	"exits" : {"south" : "Laundry", "north" : "Fight"},
 	"items" : [item_biscuit],
 	"locked" : False,
 	"npc": []
 }
 
+room_fight_club = {
+	"name": "the fight club",
+	"description" : """
+You are standing in the fight club.
+You have won all of your fights.""",
+	"exits" : {"south" : "Alley"},
+	"items" : [],
+	"locked" : False,
+	"npc": []
+}
 #first floor rooms
 first_floor_hallway = {
 	"name": "the first floor hallway",
@@ -428,6 +438,7 @@ room = {
 	"Stairs to first floor" : stairs_to_first,
 	"Laundry" : room_laundry,
 	"Alley" : room_alley,
+	"Fight" : room_fight_club,
 	"Hallway" : first_floor_hallway,
 	"Rooms 1 and 2" : rooms_1_and_2,
 	"Room 1" : room_1,

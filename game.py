@@ -367,6 +367,9 @@ def execute_program(current_room):
 		os.system("stairwellbattle.py")
 		return current_room
 
+	if current_room == room["Fight"]:
+		os.system("boxers.py")
+		return current_room
 
 	
 def is_item_in_list(item, items):
