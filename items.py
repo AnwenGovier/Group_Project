@@ -5,7 +5,7 @@ item_pistol = {
 
 	"damage": 90,
 
-	"heal": 0,
+	"health": 0,
 
 	"description": 
 	"""Used to blast fools!"""
@@ -19,7 +19,7 @@ item_biscuit = {
 
 	"damage": 0,
 
-	"heal": 10,
+	"health": 10,
 
 	"description": 
 	"""A delicious biscuit that has regenerative properties."""
@@ -32,7 +32,7 @@ item_broom = {
 
 	"damage": 10,
 
-	"heal": 0,
+	"health": 0,
 
 	"description": 
 	"""A broom used to sweep the floor. Can also used as a deadly weapon or as a dancing partner."""
@@ -45,7 +45,7 @@ item_kitchen_knife = {
 
 	"damage": 30,
 
-	"heal": 0,
+	"health": 0,
 
 	"desciption":
 	"""A sharp kitchen knife used to chop up the meanest carrots! 

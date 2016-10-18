@@ -60,11 +60,8 @@ def print_a_list_of_inventory_items(items):
 	""" The following code in this function displays the users inventory items exactly how the 
 	items are displayed in the room in print_a_list_of_room_items(rooms).
 	The difference is the words that are printed with the items.
-	e.g.
-	>>> print_a_list_of_inventory_items(inventory)
-	You have a pistol.
-	<BLANKLINE>
-    """
+		
+	"""
 	list_of_items_in_inventory = create_a_list_of_items(items)
 	if len(list_of_items_in_inventory) == 0:
 		return;
@@ -88,11 +85,7 @@ def print_description_current_room(room):
     <BLANKLINE>
     There is a pistol, a key for the second level here in the room.    
 	"""
-	print('')
-	print(room["name"].upper())
-	print('')
-	print(room["description"])
-	print('')
+	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n")
 	print_a_list_of_room_items(room)
 	
 
@@ -163,6 +156,13 @@ def print_menu_of_items_and_exits(exits, room_items, inventory_items):
 			item_name = items['name']
 			if x == item_name:
 				print('DROP ' + items['id'].upper() + ' to drop ' + items['name'] + '.')
+	#show items that can be used by the user
+	for items in inventory_items:
+		items_list = create_a_list_of_items(inventory_items).split(', ')
+		for x in items_list:
+			item_name = items['name']
+			if x == item_name:
+				print('USE ' + items['id'].upper() + ' to use ' + items['name'] + '.')			
 
 	print("What do you want to do?")
 
@@ -454,13 +454,38 @@ def drop_an_item(item_id):
 	else:
 		print("You cannot drop that")
 
+def use_item_in_inventory(item_id, items):
+	'''
+	This function allows the user to use an item in the inventory.
+	'''
+	global inventory
+	global player
+
+	item_in_inventory = []
+	for i in items:
+		id = i["id"]
+		if item_id == id:
+			if item_id == item_alcohol:
+				player["Health"] = player["Health"] + i["health"]
+				player["Intoxicated"] == True
+				print(player["Intoxicated"])
+			else:
+				player["Health"] = player["Health"] + i["health"]
+		else:
+			item_in_inventory.append(i)
+	inventory = item_in_inventory
+	return False
+
 
 def use_item(item_id):
 	"""NEED TO FIGURE OUT CODE FOR THIS"""
-
-
-#add this
-pass
+	if is_item_in_inventory(item_id, inventory):
+		use_item_in_inventory(item_id, inventory)
+		print ("Your health is now " + str(player["Health"]))
+		return inventory
+		return player
+	else:
+		print("You cannot use this")
 
 
 def execute_command(command):
