@@ -441,7 +441,7 @@ def take_an_item(item_id):
 		remove_item_from_current_room(item_id, current_room["items"])
 		return inventory
 	else:
-		print("You cannot drop that.")
+		print("You cannot take that.")
 
 def drop_an_item(item_id):
 	"""
