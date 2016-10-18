@@ -222,17 +222,7 @@ def go(direction):
 		if room_status == 'False':
 			print("The room is locked and you didn't answer the question correctly!")
 
-			#break
-		if current_room == room["The roof"]:
-			#runs another program
-			os.system("battle.py")
-			#exits program - player died and chose not to continue
-			exit()
-		if current_room == room["Stairs to first floor"]:
-			os.system("stairwellbattle.py")
-			return current_room
-
-
+	
 	else:
 		print("You cannot go there!")
 
@@ -247,31 +237,31 @@ def question(current_room):
 		print("Red", "\nPurple", "\nGreen", "\nWhite", "\nTo exit question enter: EXIT")
 		return answer(1, current_room)
 
-	elif current_room['name'] == "Room 3":
+	elif current_room['name'] == "room 3":
 		#This question is number 2
 		print("What item is found in the ally?")
 		print("Biscuit", "\nBroom", "\nkitchen-knife", "\nPhone", "\nTo exit question enter: EXIT")
 		return answer(2, current_room)
 
-	elif current_room['name'] == "Room 5":
+	elif current_room['name'] == "room 5":
 		#This question is number 3
 		print("What is the name of the bar tender?")
 		print("Walter", "\nBen", "\nGerald", "\nLarry", "\nTo exit question enter: EXIT")
 		return answer(3, current_room)
 
-	elif current_room['name'] == "Room 6":
+	elif current_room['name'] == "room 6":
 		#This question is number 4
 		print("What colour is the drink being served in the bar?")
 		print("Pink", "\nBlue", "\nBrown", "\nTo exit question enter: EXIT")
 		return answer(4, current_room)
 
-	elif current_room['name'] == "Stairs to second floor":
+	elif current_room['name'] == "the stairs to the second floor":
 		#This question is number 5
 		print("What is Mickeys favourite colour?")
 		print("Red", "\nPurple", "\nYellow", "\nPink", "\nTo exit question enter: EXIT")
 		return answer(5, current_room)
 
-	elif current_room['name'] == "Secret door":
+	elif current_room['name'] == "the secret door":
 		#This question is number 6
 		print("What is in the laundry?")
 		print("Spaghetti", "\nShoes", "\nBucket", "\nShirts", "\nTo exit question enter: EXIT")
@@ -300,6 +290,8 @@ def answer(question_number, current_room):
 				break
 			elif user_ans == ['exit']:
 				break
+			else:
+				print("That is the wrong answer, try again!")
 
 	elif question_number == 3:
 		while True:
@@ -310,6 +302,8 @@ def answer(question_number, current_room):
 				break
 			elif user_ans == ['exit']:
 				break
+			else:
+				print("That is the wrong answer, try again!")
 
 	elif question_number == 4:
 		while True:
@@ -320,6 +314,8 @@ def answer(question_number, current_room):
 				break
 			elif user_ans == ['exit']:
 				break
+			else:
+				print("That is the wrong answer, try again!")
 
 	elif question_number == 5:
 		while True:
@@ -330,6 +326,8 @@ def answer(question_number, current_room):
 				break
 			elif user_ans == ['exit']:
 				break
+			else:
+				print("That is the wrong answer, try again!")
 
 	elif question_number == 6:
 		while True:
@@ -340,6 +338,8 @@ def answer(question_number, current_room):
 				break
 			elif user_ans == ['exit']:
 				break
+			else:
+				print("That is the wrong answer, try again!")
 
 def locked(current_room):
 	"""This function checks if the users current room is locked or not.
