@@ -376,7 +376,7 @@ def execute_program(current_room):
 			else:
 				os.system("stairwellbattle.py")
 				completed_fights["first stairs fight"] = True
-				return current_room
+				return current_roomx
 		
 	if current_room == room["the stairs to the second floor"]:
 		for x in completed_fights:
