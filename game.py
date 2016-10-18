@@ -212,7 +212,7 @@ def go(direction):
 
 	global current_room
 	if is_inputs_a_valid_exit(current_room['exits'], direction):
-		current_room = room[current_room['exits'][direction]]
+		current_room_check = room[current_room['exits'][direction]]
 		
 		#checks to see if the room is locked
 		room_status = locked(current_room_check)
@@ -220,12 +220,13 @@ def go(direction):
 		#if room_status returns True then the room has been unlocked
 		if room_status:
 			current_room = current_room_check
+			execute_program(current_room)
 		else:
 			print("Door remains locked!")
 			return
 
 		#checks to see if another program needs to be executed
-		execute_program(current_room)
+		#execute_program(current_room)
 
 	else:
 		print("You cannot go there!")
@@ -235,7 +236,6 @@ def question(current_room):
 	"""This function will ask the user a question that will need to be answered 
 	correctly to unlock the room"""
 
-	print(current_room)
 	if current_room['name'] == "the stairs to the first floor":
 		#This question is number 1 
 		print("What colour is the chef's hat?")
@@ -363,6 +363,7 @@ def execute_program(current_room):
 		os.system("battle.py")
 		#exits program - player died and chose not to continue
 		exit()
+
 	if current_room == room["Stairs to first floor"]:
 		os.system("stairwellbattle.py")
 		return current_room
@@ -410,7 +411,6 @@ def is_item_in_inventory(item, items):
         if item == id:
             return True
     return False
->>>>>>> 8ad4cc9bf2468a4727222906af2c91f6816e1dc3
 
 
 def remove_item_from_inventory(item_id, items):
