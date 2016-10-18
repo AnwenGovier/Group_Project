@@ -103,8 +103,14 @@ def print_description_current_room(room):
     <BLANKLINE>
 	"""
 	
+<<<<<<< HEAD
 	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n")
 	print_a_list_of_room_items(room)
+=======
+	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n" )
+	print_a_list_of_room_items(room)
+
+>>>>>>> 66e144ebcf893b36ebd4bdbdc9ae94e257231676
 	
 
 def exit_entered_leads_to(exits, direction):
@@ -219,6 +225,7 @@ def go(direction):
 		room_status = locked(current_room)
 		if room_status == 'False':
 			print("The room is locked and you didn't answer the question correctly!")
+<<<<<<< HEAD
 			#break
 		if current_room == room["The roof"]:
 			#runs another program
@@ -228,6 +235,18 @@ def go(direction):
 		if current_room == room["Stairs to first floor"]:
 			os.system("stairwellbattle.py")
 			return current_room
+=======
+			
+		elif room_status == 'True':
+			if current_room == room["The roof"]:
+				#runs another program
+				os.system("battle.py")
+				#exits program - player died and chose not to continue
+				exit()
+			if current_room == room["Stairs to first floor"]:
+				os.system("stairwellbattle.py")
+				return current_room
+>>>>>>> 66e144ebcf893b36ebd4bdbdc9ae94e257231676
 	else:
 		print("You cannot go there!")
 
@@ -564,6 +583,44 @@ def intoxication(text):
 	"""
 	This function causes each character to have a 1/5 chance of being replaced by a random letter from the string of letters.
 	The string includes the description of the current room.
+	
+	If there is 0% chance of a random character chosen, result will be the same as input
+	>>> import random
+	>>> myrand = lambda x, y: 1
+	>>> mychoice = lambda x: "A"
+	>>> random.randint = myrand
+	>>> random.choice = mychoice
+	>>> intoxication("Hello World")
+	'Hello World'
+
+	If there is 100% chance of a random character chosen, result will be the same as 'AAAAAAAAAAA'
+	>>> import random
+	>>> myrand = lambda x, y: 0
+	>>> mychoice = lambda x: "A"
+	>>> random.randint = myrand
+	>>> random.choice = mychoice
+	>>> intoxication("Hello World")
+	'AAAAAAAAAAA'
+
+	If every second character is replaced
+	>>> import random
+	>>> thisone = 0
+	>>> def myrand(x, y): global thisone; thisone+=1; return thisone % 2
+	>>> mychoice = lambda x: "A"
+	>>> random.randint = myrand
+	>>> random.choice = mychoice
+	>>> intoxication("Hello World")
+	'HAlAoAWArAd'
+
+	If every third character is replaced
+	>>> import random
+	>>> thisone = 0
+	>>> def myrand(x, y): global thisone; thisone+=1; return thisone % 3
+	>>> mychoice = lambda x: "A"
+	>>> random.randint = myrand
+	>>> random.choice = mychoice
+	>>> intoxication("Hello World")
+	'HeAloAWoAld'
 	"""
 
 	string_letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
