@@ -1,4 +1,4 @@
-#kirril, 2 bad guys, bar man, hostages
+#2 bad guys, bar man, hostages
 #id, name, description, item, dialogue, can_attack, player state
 
 
