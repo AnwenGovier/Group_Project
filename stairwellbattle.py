@@ -26,6 +26,21 @@ MonsterBernardStats = [MonsterBernardLowAttack, MonsterBernardHighAttack, Monste
 
 ##################################################################################################
 
+def Preparation():
+	global Times
+	while Times not in range(TimesLow, TimesHigh+1):
+		print ("\n\n\n\n\n\n\n\n\n\n\n                   Enter the times you need to prepare (1-10): ")
+		Times = input("                                     ")
+		while not (Times == ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"] and Times.isdigit()):
+			os.system("cls")
+			print ("Please make sure that you have entered a correct number")
+			print ("\n\n\n\n\n\n\n\n\n\n\n                   Enter the times you need to prepare (1-10): ")
+			Times = input("                                     ")
+		else:
+			os.system("cls")
+
+##################################################################################################
+
 print ("\n\n You have faced Bernard and you must defeat him to get up the stairs!")
 print ("\n\n But you need some time to prepare for the battle in order to win!")
 print ("\n So far. . . you are. . .")
@@ -37,13 +52,7 @@ print ("\n Take wise decisions.")
 print ("\n\n\n           Press any key to continue with character customization")
 getch()
 os.system("cls")
-
-##################################################################################################
-
-while Times not in range(TimesLow, TimesHigh+1):
-	print ("\n\n\n\n\n\n\n\n\n\n\n                   Enter the times you need to prepare (5-10): ")
-	Times = int(input("                                     "))
-	os.system("cls")
+Preparation()
 
 ##################################################################################################
 

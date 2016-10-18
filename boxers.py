@@ -57,6 +57,22 @@ HeroPlayerHealth1 = 100
 HeroPlayerHealth2 = 150
 HeroPlayerHealth3 = 200
 HeroPlayerHealth4 = 250
+
+##################################################################################################
+
+def Preparation():
+	global Times
+	while Times not in range(TimesLow, TimesHigh+1):
+		print ("\n\n\n\n\n\n\n\n\n\n\n                   Enter the times you need to prepare (1-10): ")
+		Times = input("                                     ")
+		while not (Times == ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"] and Times.isdigit()):
+			os.system("cls")
+			print ("Please make sure that you have entered a correct number")
+			print ("\n\n\n\n\n\n\n\n\n\n\n                   Enter the times you need to prepare (1-10): ")
+			Times = input("                                     ")
+		else:
+			os.system("cls")
+
 ##################################################################################################
 
 print ("\n You are facing a really heavy task!")
@@ -69,17 +85,7 @@ print ("\n Make wise decisions in order to finish them all. . .")
 print ("\n\n\n           Press any key to continue with character customization")
 getch()
 os.system("cls")
-
-##################################################################################################
-
-while Times not in range(TimesLow, TimesHigh+1):
-	print ("\n\n\n\n\n\n\n\n\n\n\n                   Enter the times you need to prepare (1-10): ")
-	Times = int(input("                                     "))
-	if Times == ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]:
-		os.system("cls")
-	else:
-		print ("Please try again!")
-		os.system("cls")
+Preparation()
 
 ##################################################################################################
 
