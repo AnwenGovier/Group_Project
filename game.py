@@ -36,12 +36,15 @@ def print_a_list_of_room_items(room):
 	is located in the game_map.py amd the definition and name is located in the items.py file.
 	The items are displayed in a list where each item is seperated using a comma and a space.
 	e.g.
-	>>> print_a_list_of_items(rooms["Bar"])
-	There is a biscuit, an alcoholic drink here in the room.
+	>>> print_a_list_of_room_items(room["Bar"])
+	There is an alcoholic drink here in the room.
 	<BLANKLINE>
-	>>> print_a_list_of_items(rooms["Alley"])
-	(no output)
-	>>> print_a_list_of_items(rooms["Kitchen"])
+
+	>>> print_a_list_of_room_items(room["Alley"])
+	There is a biscuit here in the room.
+	<BLANKLINE>
+
+	>>> print_a_list_of_room_items(room["Kitchen"])
 	There is a kitchen knife here in the room.
 	<BLANKLINE>
 
@@ -60,6 +63,7 @@ def print_a_list_of_inventory_items(items):
 	e.g.
 	>>> print_a_list_of_inventory_items(inventory)
 	You have a pistol.
+	<BLANKLINE>
     """
 	list_of_items_in_inventory = create_a_list_of_items(items)
 	if len(list_of_items_in_inventory) == 0:
@@ -75,38 +79,21 @@ def print_description_current_room(room):
 	and after it. The description of the room is displayed next with a blank line 
 	following afterwards. Finally a list of the items in the room is displayed with a 
 	blank line afterwards.
-	e.g.
-	>>> print_description_current_room(rooms["Alley"])
-	<BLANKLINE>
-    THE BACK ALLEY
-    <BLANKLINE>
-    You are now standing in a back alley behind the hotel.
-	Dustbins line the street giving off a foul odour of waste and decay. 
-	You can go south to go back to the Laundry room.
-    <BLANKLINE>
-    
-    >>> print_description_current_room(rooms["Room 1"])
+	For example the description for Room 1 is:
 	<BLANKLINE>
     ROOM ONE
     <BLANKLINE>
-    You are now standing in a deserted bedroom. Clothes are dtrung everywhere, furniture knocked over. 
+    You are now standing in a deserted bedroom. Clothes are strung everywhere, furniture knocked over. 
 	Whoever stayed here left in a hurry...
     <BLANKLINE>
-    There is a pistol, a key for the second level here in the room.
-
-    >>> print_description_current_room(rooms["Further in"])
-	<BLANKLINE>
-    FURTHER IN
-    <BLANKLINE>
-    A plaster board wall blocks your path. 
-	You can go south to go back.
-    <BLANKLINE>
+    There is a pistol, a key for the second level here in the room.    
 	"""
-	
-
-	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n")
+	print('')
+	print(room["name"].upper())
+	print('')
+	print(room["description"])
+	print('')
 	print_a_list_of_room_items(room)
-
 	
 
 def exit_entered_leads_to(exits, direction):
@@ -114,12 +101,12 @@ def exit_entered_leads_to(exits, direction):
 	This function uses a dictionary of exits and a direction (an exit made avaliable
 	to the user). It returns the name of the room that they will go to next.
 	e.g.
-	>>> exit_entered_leads_to["Lobby"]["exits"], "west"
-	"the hotel bar"
-	>>> exit_entered_leads_to["Laundry"]["exits"], "north"
-	"the back alley"
-	>>> exit_entered_leads_to["Stairs to the roof"]["exits"], "east"
-	"roof"
+	>>> exit_entered_leads_to(room["Lobby"]["exits"], "west")
+	'the hotel bar'
+	>>> exit_entered_leads_to(room["Laundry"]["exits"], "north")
+	'the back alley'
+	>>> exit_entered_leads_to(room["Stairs to the roof"]["exits"], "east")
+	'the roof'
 	"""
 	return room[exits[direction]]["name"]
 
@@ -131,11 +118,11 @@ def print_the_exits_avaliable_to_user(direction, leads_to):
 	GO <EXIT NAME> to <leads to>.
 	e.g.
 	>>> print_the_exits_avaliable_to_user("east", "Lobby")
-	GO EAST to the hotel lobby.
+	Go EAST to Lobby.
+
 	>>> print_the_exits_avaliable_to_user("north", "Laundry")
-	GO EAST to the laundry room.
-	>>> print_the_exits_avaliable_to_user("west", "Room 1")
-	GO WEST to room one.
+	Go NORTH to Laundry.
+
 	"""
 	print('Go ' + direction.upper() + ' to ' + leads_to + '.')
 
@@ -149,7 +136,7 @@ def print_menu_of_items_and_exits(exits, room_items, inventory_items):
 	DROP <ITEM ID> to drop <item name>.
 	It splits all of the items in the inventory so that they can be displayed individually to the user.
 	e.g.
-	The actions avaliable to the player in the batr are as follows:
+	The actions avaliable to the player in the bar are as follows:
 	You can:
 	GO EAST to the lobby.
 	GO NORTH to the kitchen.
@@ -187,11 +174,11 @@ def is_inputs_a_valid_exit(exits, chosen_exit):
 	It is assumed that the input has already been normalised before this function is
 	run.
 	e.g.
-	>>> is_inputs_a_valid_exit(rooms["Lobby"]["exits"], "west")
+	>>> is_inputs_a_valid_exit(room["Lobby"]["exits"], "west")
 	True
-	>>> is_inputs_a_valid_exit(rooms["Kitchen"]["exits"], "east")
+	>>> is_inputs_a_valid_exit(room["Kitchen"]["exits"], "east")
 	False
-	>>> is_inputs_a_valid_exit(rooms["Kitchen"]["exits"], "south")
+	>>> is_inputs_a_valid_exit(room["Kitchen"]["exits"], "south")
 	True
 	"""
 	return chosen_exit in exits
@@ -641,9 +628,9 @@ def move_to_another_room(exits, direction):
 	This function returns the room into which the player 
 	will move to if the input contains a valid exit.
 	e.g.
-	>>> move_to_another_room(rooms["Lobby"]["exits"], "north") == rooms["Kitchen"]
+	>>> move_to_another_room(room["Lobby"]["exits"], "north") == room["Kitchen"]
 	True
-	>>> move_to_another_room(rooms["Bar"]["exits"], "north") == rooms["Lobby"]
+	>>> move_to_another_room(room["Bar"]["exits"], "north") == room["Lobby"]
 	False
 	"""
 	return room[exits[direction]]

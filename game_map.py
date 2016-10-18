@@ -122,8 +122,7 @@ to the begining of the hallway. You can also go north to look at rooms 3 and 4. 
 room_1 = {
 	"name": "room one",
 	"description" : """
-You are now standing in a deserted bedroom. Clothes are dtrung everywhere, furniture knocked over. 
-Whoever stayed here left in a hurry... """,
+You are now standing in a deserted bedroom. Clothes are strung everywhere, furniture knocked over. Whoever stayed here left in a hurry... """,
 	"exits" : {"east" : "Rooms 1 and 2" },
 	"items" : [item_pistol, item_second_level_key],
 	"locked" : False,
