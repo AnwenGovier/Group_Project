@@ -375,6 +375,9 @@ def execute_program(current_room):
 	else:
 		return current_room
 
+	if current_room == room["Fight"]:
+		os.system("boxers.py")
+		return current_room
 
 	
 def is_item_in_list(item, items):
@@ -633,7 +636,7 @@ def menu(exits, room_items, inventory_items):
 	print_menu_of_items_and_exits(exits, room_items, inventory_items)
 
 	#read the player's input
-	user_input = input(">> ")
+	user_input = input('>> ')
 
 	#normalise the input
 	normalised_user_input = user_input_normalisation(user_input)
