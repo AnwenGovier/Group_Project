@@ -369,7 +369,8 @@ def execute_program(current_room):
 
 		exit()
 
-	if current_room == room["Stairs to first floor"]:	
+
+	if current_room['name'] == "the stairs to the first floor":	
 		for x in completed_fights:
 			if completed_fights["first stairs fight"] == True:
 				return current_room
@@ -378,12 +379,12 @@ def execute_program(current_room):
 				completed_fights["first stairs fight"] = True
 				return current_room
 		
-	if current_room == room["the stairs to the second floor"]:
+	if current_room['name'] == "the stairs to the second floor":
 		for x in completed_fights:
 			if completed_fights["second stairs fight"] == True:
 				return current_room
 			else:
-				os.system("2nfloorbattle.py")
+				os.system("2ndfloorbattle.py")
 				completed_fights["second stairs fight"] = True
 				return current_room
 
@@ -395,7 +396,6 @@ def execute_program(current_room):
 				os.system("boxers.py")
 				completed_fights['fight'] = True
 				return current_room
-
 
 
 	
@@ -499,6 +499,7 @@ def use_item_in_inventory(item_id, items):
 		if item_id == id:
 			player["Health"] = player["Health"] + i["health"]
 			# CAN'T GET THIS TO WORK
+			print(item_id)
 			if item_alcohol == id:
 				player["Intoxicated"] == True
 				intoxication(text)
