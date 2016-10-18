@@ -407,12 +407,11 @@ def is_item_in_inventory(item, items):
 
 
 def remove_item_from_inventory(item_id, items):
-
-    """
+	"""
 	This function removes the requested item in the players inventory and appends it to the
 	list of items in the players current room.
 	The changes are displayed in the print_menu_of_items_and_exits function for the player.
-	"""
+	""" 
 	global inventory
 	items_in_inventory = []
 	for i in items:
@@ -429,15 +428,14 @@ def take_an_item(item_id):
 	This function allows the user to take an item from the current room.
 	It runs two seperate functions, one to make sure the chosen item is valid and one to
 	move the item from the room into the players inventory.
-	If it cannot do any of these things then You cannot take that is displayed."""
-
-    global inventory
-    if is_item_in_list(item_id, current_room["items"]):
-        remove_item_from_current_room(item_id, current_room["items"])
-        return inventory
-    else:
-        print("You cannot take that.")
-
+	If it cannot do any of these things then You cannot take that is displayed.
+	"""
+	global inventory
+	if is_item_in_list(item_id, current_room["items"]):
+		remove_item_from_current_room(item_id, current_room["items"])
+		return inventory
+	else:
+		print("You cannot drop that.")
 
 def drop_an_item(item_id):
 	"""
@@ -446,17 +444,15 @@ def drop_an_item(item_id):
 	is moved from the inventory and into the players current room.
 	Else You cannot drop that is displayed.
 	"""
-    if is_item_in_inventory(item_id, inventory):
-        remove_item_from_inventory(item_id, inventory)
-        return inventory
-    else:
-        print("You cannot drop that.")
+	if is_item_in_inventory(item_id, inventory):
+		remove_item_from_inventory(item_id, inventory)
+		return inventory
+	else:
+		print("You cannot drop that")
 
 
 def use_item(item_id):
 	"""NEED TO FIGURE OUT CODE FOR THIS"""
-
-
 
 
 #add this
