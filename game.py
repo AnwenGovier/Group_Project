@@ -344,14 +344,22 @@ def execute_program(current_room):
 	no program attatched to that room nothing will be executed and the current room is 
 	returned"""
 
+	#Show levels as not being completed, once completed; set == True
+	stairs_first_floor_fight = False
+
+
 	if current_room == room["The roof"]:
 		#runs another program
 		os.system("battle.py")
 		#exits program - player died and chose not to continue
 		exit()
 
-	if current_room == room["Stairs to first floor"]:
-		os.system("stairwellbattle.py")
+	if stairs_first_floor_fight == False:
+		if current_room == room["Stairs to first floor"]:
+			os.system("stairwellbattle.py")
+			stairs_first_floor_fight = True 
+			return current_room
+	else:
 		return current_room
 
 	if current_room == room["Fight"]:
