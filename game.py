@@ -28,7 +28,7 @@ def create_a_list_of_items(items):
 	complete_list =', '.join(list_of_items)
 	return complete_list
 
-def print_a_list_of_room_items(rooms):
+def print_a_list_of_room_items(room):
 	"""
 	The following function takes a room as an input and displayes the correspoding list
 	of items that can be found. It then prints a blank line
@@ -103,7 +103,9 @@ def print_description_current_room(room):
     <BLANKLINE>
 	"""
 	
-	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n" + str(print_a_list_of_room_items(room)))
+	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n" )
+	print_a_list_of_room_items(room)
+
 	
 
 def exit_entered_leads_to(exits, direction):
@@ -209,24 +211,25 @@ def go(direction):
 
 	global current_room
 	if is_inputs_a_valid_exit(current_room['exits'], direction):
-		current_room_check = room[current_room['exits'][direction]]
+		current_room = room[current_room['exits'][direction]]
 		
 		#checks to see if another program needs to be executed
 		execute_program(current_room)
 
 		#checks to see if the room is locked
-		room_status = locked(current_room_check)
+		room_status = locked(current_room)
 		if room_status == 'False':
 			print("The room is locked and you didn't answer the question correctly!")
-			break
-		if current_room == room["The roof"]:
-			#runs another program
-			os.system("battle.py")
-			#exits program - player died and chose not to continue
-			exit()
-		if current_room == room["Stairs to first floor"]:
-			os.system("stairwellbattle.py")
-			return current_room
+			
+		elif room_status == 'True':
+			if current_room == room["The roof"]:
+				#runs another program
+				os.system("battle.py")
+				#exits program - player died and chose not to continue
+				exit()
+			if current_room == room["Stairs to first floor"]:
+				os.system("stairwellbattle.py")
+				return current_room
 	else:
 		print("You cannot go there!")
 
