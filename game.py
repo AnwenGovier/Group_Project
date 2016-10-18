@@ -227,6 +227,7 @@ def go(direction):
 				os.system("battle.py")
 				#exits program - player died and chose not to continue
 				exit()
+
 			if current_room == room["Stairs to first floor"]:
 				os.system("stairwellbattle.py")
 				return current_room
@@ -238,7 +239,7 @@ def question(current_room):
 	"""This function will ask the user a question that will need to be answered 
 	correctly to unlock the room.
 	If the answer is incorrect then they cannot open the door"""
-	if current_room == room["the stairs to the first floor"]:
+	if current_room == room["the stairs to first floor"]:
 		#This question is number 1 
 		print("What colour is the chef's hat?")
 		print("Red \n", "Purple\n", "Green\n", "White\n", "To exit question enter: EXIT")
