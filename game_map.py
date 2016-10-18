@@ -46,7 +46,7 @@ could talk to the waiter. """,
 }
 
 stairs_to_first = {
-	"name": " the stairs to the first floor",
+	"name": "the stairs to the first floor",
 	"description" : """
 The stairs ahead will take you to the first floor.
 One of the Python's men is guarding the stairs and will 

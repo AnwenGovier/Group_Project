@@ -28,7 +28,7 @@ def create_a_list_of_items(items):
 	complete_list =', '.join(list_of_items)
 	return complete_list
 
-def print_a_list_of_room_items(rooms):
+def print_a_list_of_room_items(room):
 	"""
 	The following function takes a room as an input and displayes the correspoding list
 	of items that can be found. It then prints a blank line
@@ -172,22 +172,19 @@ def go(direction):
 	if is_inputs_a_valid_exit(current_room['exits'], direction):
 		current_room_check = room[current_room['exits'][direction]]
 		
+		#checks to see if the room is locked
+		room_status = locked(current_room_check)
+
+		#if room_status returns True then the room has been unlocked
+		if room_status:
+			current_room = current_room_check
+		else:
+			print("Door remains locked!")
+			return
+
 		#checks to see if another program needs to be executed
 		execute_program(current_room)
 
-		#checks to see if the room is locked
-		room_status = locked(current_room_check)
-		if room_status == 'False':
-			print("The room is locked and you didn't answer the question correctly!")
-			break
-		if current_room == room["The roof"]:
-			#runs another program
-			os.system("battle.py")
-			#exits program - player died and chose not to continue
-			exit()
-		if current_room == room["Stairs to first floor"]:
-			os.system("stairwellbattle.py")
-			return current_room
 	else:
 		print("You cannot go there!")
 
@@ -195,7 +192,8 @@ def go(direction):
 def question(current_room):
 	"""This function will ask the user a question that will need to be answered 
 	correctly to unlock the room."""
-	if current_room == room["the stairs to the first floor"]:
+	print(current_room)
+	if current_room['name'] == "the stairs to the first floor":
 		#This question is number 1 
 		print("What colour is the chef's hat?")
 		print("Red \n", "Purple\n", "Green\n", "White\n", "To exit question enter: EXIT")
@@ -232,68 +230,68 @@ def question(current_room):
 		return answer(6, current_room)
 
 def answer(question_number, current_room):
-	if question_number == '1':
+	if question_number == 1:
 		while True:
 			user_ans = input(">>")
 			user_ans = user_input_normalisation(user_ans)
-			if user_ans == 'purple':
+			print(user_ans)
+			if user_ans == ['purple']:
 				return True
 				break
-			elif user_ans == 'exit':
+			elif user_ans == ['exit']:
 				break
 			else:
 				print("That is the wrong answer, try again!")
 
-	elif question_number == '2':
+	elif question_number == 2:
 		while True:
 			user_ans = input(">>")
 			user_ans = user_input_normalisation(user_ans)
-			if user_ans == 'biscuit':
+			if user_ans == ['biscuit']:
 				return True
 				break
-			elif user_ans == 'exit':
+			elif user_ans == ['exit']:
 				break
 
-	elif question_number == '3':
+	elif question_number == 3:
 		while True:
 			user_ans = input(">>")
 			user_ans = user_input_normalisation(user_ans)
-			if user_ans == 'larry':
+			if user_ans == ['larry']:
 				return True
 				break
-			elif user_ans == 'exit':
+			elif user_ans == ['exit']:
 				break
 
-	elif question_number == '4':
+	elif question_number == 4:
 		while True:
 			user_ans = input(">>")
 			user_ans = user_input_normalisation(user_ans)
-			if user_ans == 'blue':
+			if user_ans == ['blue']:
 				return True
 				break
-			elif user_ans == 'exit':
+			elif user_ans == ['exit']:
 				break
 
-	elif question_number == '5':
+	elif question_number == 5:
 		while True:
 			user_ans = input(">>")
 			user_ans = user_input_normalisation(user_ans)
-			if user_ans == 'red':
+			if user_ans == ['red']:
 				return True
 				break
-			elif user_ans == 'exit':
+			elif user_ans == ['exit']:
 				break
 
-	elif question_number == '6':
+	elif question_number == 6:
 		while True:
 			user_ans = input(">>")
 			user_ans = user_input_normalisation(user_ans)
-			if user_ans == 'spagetti':
+			if user_ans == ['spagetti']:
 				return True
 				break
-			elif user_ans == 'exit':
+			elif user_ans == ['exit']:
 				break
-
 
 def locked(current_room):
 	"""This function checks if the room is locked or not"""
@@ -303,16 +301,23 @@ def locked(current_room):
 			if current_room['locked'] == True:
 				if question(current_room):
 					current_room['locked'] == False
+					return True
 				else:
 					return False
-
+	return True
 
 def execute_program(current_room):
 	"""This function will exectute another program if a certain room is entered. If there is 
 	no program attatched to that room nothing will be executed and the current room is 
 	returned."""
-
-	
+	if current_room == room["The roof"]:
+		#runs another program
+		os.system("battle.py")
+		#exits program - player died and chose not to continue
+		exit()
+		if current_room == room["Stairs to first floor"]:
+			os.system("stairwellbattle.py")
+			return current_room
 
 
 def take_an_item(item_id):
