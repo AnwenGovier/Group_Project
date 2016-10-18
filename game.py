@@ -370,6 +370,7 @@ def execute_program(current_room):
 	if stairs_first_floor_fight == False:
 		if current_room == room["Stairs to first floor"]:
 			os.system("stairwellbattle.py")
+			stairs_first_floor_fight = True 
 			return current_room
 	else:
 		return current_room
