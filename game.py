@@ -28,7 +28,7 @@ def create_a_list_of_items(items):
 	complete_list =', '.join(list_of_items)
 	return complete_list
 
-def print_a_list_of_room_items(rooms):
+def print_a_list_of_room_items(room):
 	"""
 	The following function takes a room as an input and displayes the correspoding list
 	of items that can be found. It then prints a blank line
@@ -103,7 +103,8 @@ def print_description_current_room(room):
     <BLANKLINE>
 	"""
 	
-	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n" + str(print_a_list_of_room_items(room)))
+	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n")
+	print_a_list_of_room_items(room)
 	
 
 def exit_entered_leads_to(exits, direction):
@@ -209,16 +210,16 @@ def go(direction):
 
 	global current_room
 	if is_inputs_a_valid_exit(current_room['exits'], direction):
-		current_room_check = room[current_room['exits'][direction]]
+		current_room = room[current_room['exits'][direction]]
 		
 		#checks to see if another program needs to be executed
 		execute_program(current_room)
 
 		#checks to see if the room is locked
-		room_status = locked(current_room_check)
+		room_status = locked(current_room)
 		if room_status == 'False':
 			print("The room is locked and you didn't answer the question correctly!")
-			break
+			#break
 		if current_room == room["The roof"]:
 			#runs another program
 			os.system("battle.py")
@@ -235,37 +236,37 @@ def question(current_room):
 	"""This function will ask the user a question that will need to be answered 
 	correctly to unlock the room.
 	If the answer is incorrect then they cannot open the door"""
-	if current_room == room["the stairs to the first floor"]:
+	if current_room == room["Stairs to first floor"]:
 		#This question is number 1 
 		print("What colour is the chef's hat?")
 		print("Red \n", "Purple\n", "Green\n", "White\n", "To exit question enter: EXIT")
 		return answer(1, current_room)
 
-	elif current_room == room["room three"]:
+	elif current_room == room["Room 3"]:
 		#This question is number 2
 		print("What item is found in the ally?")
 		print("Biscuit\n", "Broom\n", "kitchen-knife\n", "Phone\n", "To exit question enter: EXIT")
 		return answer(2, current_room)
 
-	elif current_room == room["room five"]:
+	elif current_room == room["Room 5"]:
 		#This question is number 3
 		print("What is the name of the bar tender?")
 		print("Walter\n", "Ben\n", "Gerald\n", "Larry\n", "To exit question enter: EXIT")
 		return answer(3, current_room)
 
-	elif current_room == room["room six"]:
+	elif current_room == room["Room 6"]:
 		#This question is number 4
 		print("What colour is the drink being served in the bar?")
 		print("Pink\n", "Blue\n", "Brown\n", "To exit question enter: EXIT")
 		return answer(4, current_room)
 
-	elif current_room == room["the stairs to the second floor"]:
+	elif current_room == room["Stairs to second floor"]:
 		#This question is number 5
 		print("What is Mickeys favourite colour?")
 		print("Red\n", "Purple\n", "Yellow\n", "Pink\n", "To exit question enter: EXIT")
 		return answer(5, current_room)
 
-	elif current_room == room["the secret door"]:
+	elif current_room == room["Secret door"]:
 		#This question is number 6
 		print("What is in the laundry?")
 		print("Spaghetti\n", "Shoes\n", "Bucket\n", "Shirts\n", "To exit question enter: EXIT")
