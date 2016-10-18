@@ -57,9 +57,7 @@ def print_a_list_of_inventory_items(items):
 	""" The following code in this function displays the users inventory items exactly how the 
 	items are displayed in the room in print_a_list_of_room_items(rooms).
 	The difference is the words that are printed with the items.
-	e.g.
-	>>> print_a_list_of_inventory_items(inventory)
-	You have a pistol.
+	
     """
 	list_of_items_in_inventory = create_a_list_of_items(items)
 	if len(list_of_items_in_inventory) == 0:
