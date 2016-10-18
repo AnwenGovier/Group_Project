@@ -113,7 +113,7 @@ def exit_entered_leads_to(exits, direction):
 def print_the_exits_avaliable_to_user(direction, leads_to):
 	"""
 	The code in this function prints a menu of exits that are avaliable
-	to the user. It uses a direction and the name of the room to do this.
+	to the user. It uses a direction and the name of the next room to do this.
 	They should be printed like this:
 	GO <EXIT NAME> to <leads to>.
 	e.g.
