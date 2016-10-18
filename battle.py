@@ -26,21 +26,6 @@ MonsterKirillStats = [MonsterKirillLowAttack, MonsterKirillHighAttack, MonsterKi
 
 ##################################################################################################
 
-def Preparation():
-	global Times
-	while Times not in range(TimesLow, TimesHigh+1):
-		print ("\n\n\n\n\n\n\n\n\n\n\n                   Enter the times you need to prepare (1-10): ")
-		Times = input("                                     ")
-		while not (Times == ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"] and Times.isdigit()):
-			os.system("cls")
-			print ("Please make sure that you have entered a correct number")
-			print ("\n\n\n\n\n\n\n\n\n\n\n                   Enter the times you need to prepare (1-10): ")
-			Times = input("                                     ")
-		else:
-			os.system("cls")
-
-##################################################################################################
-
 print ("\n\n You have faced Kirill and you must defeat him!")
 print ("\n\n But you need some time to prepare for the battle in order to win!")
 print ("\n So far. . . you are. . .")
@@ -52,13 +37,17 @@ print ("\n Take wise decisions, because Kirill is way more powerful than you thi
 print ("\n\n\n           Press any key to continue with character customization")
 getch()
 os.system("cls")
-Preparation()
 
 ##################################################################################################
 
 while Times not in range(TimesLow, TimesHigh+1):
-	print ("\n\n\n\n\n\n\n\n\n\n\n                   Enter the times you need to prepare (5-10): ")
-	Times = int(input("                                     "))
+	print ("\n\n\n\n\n\n\n\n\n\n\n                   Enter the times you need to prepare (1-10): ")
+	#need loop that asks for valid integer value
+	try:
+		Times = int(input("                                     "))
+	except ValueError:
+		print ("Sorry, I didn't understand that. you must enter a number between 1-10.")
+		continue
 	os.system("cls")
 
 ##################################################################################################
@@ -186,6 +175,16 @@ def Ending(HeroPlayerHealth):
 		print("\n\n\n\n\n Press any key to continue. . . ")
 		getch()
 		os.system("cls")
+		while True:
+			print ("Do you want to play again? (Y/N)")
+			user_input = input().lower() 
+			if user_input == "y":
+				os.system("game.py")
+			elif user_input == "n":
+				exit()
+			else: 
+				os.system("cls")
+				return False
 		
 	else:
 		os.system("cls")
@@ -229,4 +228,5 @@ while (HeroPlayerHealth > 0 and MonsterKirillHealth > 0):
 
 	if (HeroPlayerHealth <= 0):
 		Ending(HeroPlayerHealth)
+
 		break

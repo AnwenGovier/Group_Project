@@ -41,10 +41,15 @@ os.system("cls")
 ##################################################################################################
 
 while Times not in range(TimesLow, TimesHigh+1):
-	print ("\n\n\n\n\n\n\n\n\n\n\n                   Enter the times you need to prepare (5-10): ")
+	print ("\n\n\n\n\n\n\n\n\n\n\n                   Enter the times you need to prepare (1-10): ")
 	#need loop that asks for valid integer value
-	Times = int(input("                                     "))
-	os.system("cls")
+	try:
+		Times = int(input("                                     "))
+	except ValueError:
+		print ("Sorry, I didn't understand that. you must enter a number between 1-10.")
+		continue
+
+os.system("cls")
 
 ##################################################################################################
 
