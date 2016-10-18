@@ -103,15 +103,10 @@ def print_description_current_room(room):
     <BLANKLINE>
 	"""
 	
-<<<<<<< HEAD
+
 	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n")
 	print_a_list_of_room_items(room)
-=======
-	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n" )
-	print_a_list_of_room_items(room)
 
->>>>>>> 66e144ebcf893b36ebd4bdbdc9ae94e257231676
-	
 
 def exit_entered_leads_to(exits, direction):
 	"""
@@ -225,7 +220,7 @@ def go(direction):
 		room_status = locked(current_room)
 		if room_status == 'False':
 			print("The room is locked and you didn't answer the question correctly!")
-<<<<<<< HEAD
+
 			#break
 		if current_room == room["The roof"]:
 			#runs another program
@@ -235,18 +230,7 @@ def go(direction):
 		if current_room == room["Stairs to first floor"]:
 			os.system("stairwellbattle.py")
 			return current_room
-=======
-			
-		elif room_status == 'True':
-			if current_room == room["The roof"]:
-				#runs another program
-				os.system("battle.py")
-				#exits program - player died and chose not to continue
-				exit()
-			if current_room == room["Stairs to first floor"]:
-				os.system("stairwellbattle.py")
-				return current_room
->>>>>>> 66e144ebcf893b36ebd4bdbdc9ae94e257231676
+
 	else:
 		print("You cannot go there!")
 
@@ -668,9 +652,10 @@ def stats(player, input_name):
 		if x == 'Name':
 			player['Name'] = input_name
 		print("| " + x + ": " + str(player[x]) + (" " * (22 - (len(x) + len(str(player[x]))))) + "|")
-	
+
 	print("|" + "_" * 25 + "|")
 	print(input("Press the enter key to continue."))
+		
 
 
 #this function will run the entire game and will call the foundation functions. These in turn will call any other functions that they need.
@@ -678,6 +663,7 @@ def stats(player, input_name):
 def main():
 	prompt_user = input("Please enter your name: ")
 	stats(player, prompt_user)
+
 
 	#main game loop
 	while True:
