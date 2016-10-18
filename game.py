@@ -208,10 +208,11 @@ def go(direction):
 		#if room_status returns True then the room has been unlocked
 		if room_status:
 			current_room = current_room_check
-			execute_program(current_room)
 		else:
 			print("Door remains locked!")
 			return
+
+		execute_program(current_room)
 
 		#checks to see if another program needs to be executed
 		#execute_program(current_room)
@@ -237,19 +238,19 @@ def question(current_room):
 		print("Red", "\nPurple", "\nGreen", "\nWhite", "\nTo exit question enter: EXIT")
 		return answer(1, current_room)
 
-	elif current_room['name'] == "room 3":
+	elif current_room['name'] == "room three":
 		#This question is number 2
 		print("What item is found in the ally?")
 		print("Biscuit", "\nBroom", "\nkitchen-knife", "\nPhone", "\nTo exit question enter: EXIT")
 		return answer(2, current_room)
 
-	elif current_room['name'] == "room 5":
+	elif current_room['name'] == "room five":
 		#This question is number 3
 		print("What is the name of the bar tender?")
 		print("Walter", "\nBen", "\nGerald", "\nLarry", "\nTo exit question enter: EXIT")
 		return answer(3, current_room)
 
-	elif current_room['name'] == "room 6":
+	elif current_room['name'] == "room six":
 		#This question is number 4
 		print("What colour is the drink being served in the bar?")
 		print("Pink", "\nBlue", "\nBrown", "\nTo exit question enter: EXIT")
