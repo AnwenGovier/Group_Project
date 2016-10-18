@@ -10,5 +10,9 @@ player = {"Name": "Change to input", "Health": 100, "Alive": True, "Intoxicated"
 #this is used to print the dictionary in order
 player_stats = ["Name", "Health", "Alive", "Intoxicated"]
 
+#completed fights
+completed_fights = {"first stairs fight": False}
+
+
 #the room that the user is currently situated in
 current_room = room["Lobby"]

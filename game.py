@@ -358,9 +358,6 @@ def execute_program(current_room):
 	no program attatched to that room nothing will be executed and the current room is 
 	returned"""
 
-	#Show levels as not being completed, once completed; set == True
-	stairs_first_floor_fight = False
-
 
 	if current_room == room["The roof"]:
 		#runs another program
@@ -368,13 +365,16 @@ def execute_program(current_room):
 		#exits program - player died and chose not to continue
 		exit()
 
-	if stairs_first_floor_fight == False:
-		if current_room == room["Stairs to first floor"]:
-			os.system("stairwellbattle.py")
-			stairs_first_floor_fight = True 
-			return current_room
-	else:
-		return current_room
+	if current_room == room["Stairs to first floor"]:	
+		for x in completed_fights:
+			if completed_fights["first stairs fight"] == True:
+				return current_room
+			else:
+				os.system("stairwellbattle.py")
+				completed_fights["first stairs fight"] = True
+				return current_room
+
+		
 
 	if current_room == room["Fight"]:
 		os.system("boxers.py")
@@ -697,6 +697,7 @@ def stats(player, input_name):
 
 
 #this function will run the entire game and will call the foundation functions. These in turn will call any other functions that they need.
+
 
 def main():
 	prompt_user = input("Please enter your name: ")
