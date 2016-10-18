@@ -217,12 +217,6 @@ def go(direction):
 		#checks to see if another program needs to be executed
 		#execute_program(current_room)
 
-
-		#checks to see if the room is locked
-		room_status = locked(current_room)
-		if room_status == 'False':
-			print("The room is locked and you didn't answer the question correctly!")
-
 	
 	else:
 		print("You cannot go there!")
@@ -351,7 +345,8 @@ def locked(current_room):
 		if x == 'locked':
 			if current_room['locked'] == True:
 				if question(current_room):
-					current_room['locked'] == False
+					current_room['locked'] = False
+					print("\n")
 					return True
 				else:
 					return False
