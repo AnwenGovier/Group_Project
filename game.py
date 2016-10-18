@@ -60,20 +60,9 @@ def print_a_list_of_inventory_items(items):
 	""" The following code in this function displays the users inventory items exactly how the 
 	items are displayed in the room in print_a_list_of_room_items(rooms).
 	The difference is the words that are printed with the items.
-<<<<<<< HEAD
-		
-	"""
-=======
-<<<<<<< HEAD
 	
-=======
-	e.g.
-	>>> print_a_list_of_inventory_items(inventory)
-	You have a pistol.
-	<BLANKLINE>
->>>>>>> 63cb7995a8f272f807ecaab40b7881d2d19c7921
     """
->>>>>>> 1a516f5283ed50a3f2cdd2035f3a8dcbda77d2fd
+
 	list_of_items_in_inventory = create_a_list_of_items(items)
 	if len(list_of_items_in_inventory) == 0:
 		return;
@@ -97,25 +86,9 @@ def print_description_current_room(room):
     <BLANKLINE>
     There is a pistol, a key for the second level here in the room.    
 	"""
-<<<<<<< HEAD
-	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n")
-=======
-<<<<<<< HEAD
-	
 
 	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n")
 	print_a_list_of_room_items(room)
-
-=======
-	print('')
-	print(room["name"].upper())
-	print('')
-	print(room["description"])
-	print('')
->>>>>>> 1a516f5283ed50a3f2cdd2035f3a8dcbda77d2fd
-	print_a_list_of_room_items(room)
-	
->>>>>>> 63cb7995a8f272f807ecaab40b7881d2d19c7921
 
 def exit_entered_leads_to(exits, direction):
 	"""
@@ -243,7 +216,7 @@ def go(direction):
 		#checks to see if another program needs to be executed
 		#execute_program(current_room)
 
-<<<<<<< HEAD
+
 		#checks to see if the room is locked
 		room_status = locked(current_room)
 		if room_status == 'False':
@@ -259,8 +232,7 @@ def go(direction):
 			os.system("stairwellbattle.py")
 			return current_room
 
-=======
->>>>>>> 63cb7995a8f272f807ecaab40b7881d2d19c7921
+
 	else:
 		print("You cannot go there!")
 
