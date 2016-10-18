@@ -63,8 +63,8 @@ npc_hostage = {
 
 	"desciption": 
 	"""
-	Gregg isnt really sure whats happening, he was asleep in his hotel room and (not usually for him) 
-	woke up bound and gagged, although he thinks there might be something different about it this time...
+	Gregg isnt really sure whats happening, he is much more use to being the one tied up, but
+	in this case he is just standing guard and trusting his superiors.
 	""",
 
 	"dialogue":
