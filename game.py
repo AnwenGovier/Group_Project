@@ -483,12 +483,11 @@ def use_item_in_inventory(item_id, items):
 	for i in items:
 		id = i["id"]
 		if item_id == id:
-			if item_id == item_alcohol:
-				player["Health"] = player["Health"] + i["health"]
-				player["Intoxicated"] == True
-				print(player["Intoxicated"])
-			else:
-				player["Health"] = player["Health"] + i["health"]
+			player["Health"] = player["Health"] + i["health"]
+			# CAN'T GET THIS TO WORK
+			if id == item_alcohol:
+				intoxication(text)
+				return
 		else:
 			item_in_inventory.append(i)
 	inventory = item_in_inventory
@@ -504,7 +503,7 @@ def use_item(item_id):
 		return player
 	else:
 		print("You cannot use this")
-
+	
 
 def execute_command(command):
 	"""
