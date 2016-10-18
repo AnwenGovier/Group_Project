@@ -36,12 +36,12 @@ def print_a_list_of_room_items(room):
 	is located in the game_map.py amd the definition and name is located in the items.py file.
 	The items are displayed in a list where each item is seperated using a comma and a space.
 	e.g.
-	>>>print_a_list_of_items(rooms["Bar"])
+	>>> print_a_list_of_items(rooms["Bar"])
 	There is a biscuit, an alcoholic drink here in the room.
 	<BLANKLINE>
-	>>>print_a_list_of_items(rooms["Alley"])
+	>>> print_a_list_of_items(rooms["Alley"])
 	(no output)
-	>>>print_a_list_of_items(rooms["Kitchen"])
+	>>> print_a_list_of_items(rooms["Kitchen"])
 	There is a kitchen knife here in the room.
 	<BLANKLINE>
 
@@ -76,7 +76,7 @@ def print_description_current_room(room):
 	following afterwards. Finally a list of the items in the room is displayed with a 
 	blank line afterwards.
 	e.g.
-	>>>print_description_current_room(rooms["Alley"])
+	>>> print_description_current_room(rooms["Alley"])
 	<BLANKLINE>
     THE BACK ALLEY
     <BLANKLINE>
@@ -85,7 +85,7 @@ def print_description_current_room(room):
 	You can go south to go back to the Laundry room.
     <BLANKLINE>
     
-    >>>print_description_current_room(rooms["Room 1"])
+    >>> print_description_current_room(rooms["Room 1"])
 	<BLANKLINE>
     ROOM ONE
     <BLANKLINE>
@@ -94,7 +94,7 @@ def print_description_current_room(room):
     <BLANKLINE>
     There is a pistol, a key for the second level here in the room.
 
-    >>>print_description_current_room(rooms["Further in"])
+    >>> print_description_current_room(rooms["Further in"])
 	<BLANKLINE>
     FURTHER IN
     <BLANKLINE>
@@ -114,11 +114,11 @@ def exit_entered_leads_to(exits, direction):
 	This function uses a dictionary of exits and a direction (an exit made avaliable
 	to the user). It returns the name of the room that they will go to next.
 	e.g.
-	>>>exit_entered_leads_to["Lobby"]["exits"], "west"
+	>>> exit_entered_leads_to["Lobby"]["exits"], "west"
 	"the hotel bar"
-	>>>exit_entered_leads_to["Laundry"]["exits"], "north"
+	>>> exit_entered_leads_to["Laundry"]["exits"], "north"
 	"the back alley"
-	>>>exit_entered_leads_to["Stairs to the roof"]["exits"], "east"
+	>>> exit_entered_leads_to["Stairs to the roof"]["exits"], "east"
 	"roof"
 	"""
 	return room[exits[direction]]["name"]
@@ -130,11 +130,11 @@ def print_the_exits_avaliable_to_user(direction, leads_to):
 	They should be printed like this:
 	GO <EXIT NAME> to <leads to>.
 	e.g.
-	>>>print_the_exits_avaliable_to_user("east", "Lobby")
+	>>> print_the_exits_avaliable_to_user("east", "Lobby")
 	GO EAST to the hotel lobby.
-	>>>print_the_exits_avaliable_to_user("north", "Laundry")
+	>>> print_the_exits_avaliable_to_user("north", "Laundry")
 	GO EAST to the laundry room.
-	>>>print_the_exits_avaliable_to_user("west", "Room 1")
+	>>> print_the_exits_avaliable_to_user("west", "Room 1")
 	GO WEST to room one.
 	"""
 	print('Go ' + direction.upper() + ' to ' + leads_to + '.')
