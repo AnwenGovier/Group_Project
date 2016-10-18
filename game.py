@@ -247,31 +247,31 @@ def question(current_room):
 		print("Red", "\nPurple", "\nGreen", "\nWhite", "\nTo exit question enter: EXIT")
 		return answer(1, current_room)
 
-	elif current_room['name'] == room["Room 3"]:
+	elif current_room['name'] == "Room 3":
 		#This question is number 2
 		print("What item is found in the ally?")
 		print("Biscuit", "\nBroom", "\nkitchen-knife", "\nPhone", "\nTo exit question enter: EXIT")
 		return answer(2, current_room)
 
-	elif current_room['name'] == room["Room 5"]:
+	elif current_room['name'] == "Room 5":
 		#This question is number 3
 		print("What is the name of the bar tender?")
 		print("Walter", "\nBen", "\nGerald", "\nLarry", "\nTo exit question enter: EXIT")
 		return answer(3, current_room)
 
-	elif current_room['name'] == room["Room 6"]:
+	elif current_room['name'] == "Room 6":
 		#This question is number 4
 		print("What colour is the drink being served in the bar?")
 		print("Pink", "\nBlue", "\nBrown", "\nTo exit question enter: EXIT")
 		return answer(4, current_room)
 
-	elif current_room['name'] == room["Stairs to second floor"]:
+	elif current_room['name'] == "Stairs to second floor":
 		#This question is number 5
 		print("What is Mickeys favourite colour?")
 		print("Red", "\nPurple", "\nYellow", "\nPink", "\nTo exit question enter: EXIT")
 		return answer(5, current_room)
 
-	elif current_room['name'] == room["Secret door"]:
+	elif current_room['name'] == "Secret door":
 		#This question is number 6
 		print("What is in the laundry?")
 		print("Spaghetti", "\nShoes", "\nBucket", "\nShirts", "\nTo exit question enter: EXIT")
