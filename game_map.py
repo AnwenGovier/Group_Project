@@ -1,6 +1,43 @@
 from items import *
 from npc import *
-
+room = {
+	"Lobby": room_lobby,
+	"Kitchen" : room_kitchen,
+	"Bar" : room_bar,
+	"Stairs to first floor" : stairs_to_first,
+	"Laundry" : room_laundry,
+	"Alley" : room_alley,
+	"Hallway" : first_floor_hallway,
+	"Rooms 1 and 2" : rooms_1_and_2,
+	"Room 1" : room_1,
+	"Room 2" : room_2,
+	"Rooms 3 and 4" : rooms_3_and_4,
+	"Room 3" : room_3,
+	"Room 4" : room_4,
+	"Rooms 5 and 6" : rooms_5_and_6,
+	"Room 5" : room_5,
+	"Room 6" : room_6,
+	"Stairs to second floor" : stairs_to_second,
+	"Maze start" : maze_start,
+	"Into the maze" : maze_1,
+	"Further into the maze" : maze_2,
+	"Deeper into the maze" : maze_3,
+	"Into more maze" : maze_4,
+	"Deeper again" : maze_5,
+	"Into even more maze" : maze_6,
+	"Even further into this floor" : maze_7,
+	"Even deeper into the maze -like floor" : maze_8,
+	"Even deeper" : maze_9,
+	"Further into the third floor" : maze_10,
+	"Further in" : maze_11,
+	"Even further in" : maze_12,
+	"Deeper into the maze again" : maze_13,
+	"Even deeper into the third floor" : maze_14,
+	"More of the maze" : maze_15,
+	"Secret door" : secret_door,
+	"Stairs to the roof" : stairs_to_roof,
+	"The roof" : room_roof
+}
 #ground floor rooms
 room_lobby = {
 	"name" : "the hotel lobby",
@@ -35,12 +72,12 @@ room_bar = {
 	"name": "the hotel bar",
 	"description" : """
 You are now standing by the hotel's bar. Its deserted. 
-A waiter stands polishing glasses behind the bar, humming to 
-an old radio. 
+A waiter, Larry stands polishing glasses behind the bar, humming to 
+an old radio. A blue drink sits on the counter top.
 You can go east to the lobby, north to the kitchen or you 
 could talk to the waiter. """,
 	"exits" : {"east" : "Lobby", "north" : "Kitchen"},
-	"items" : [item_biscuit, item_alcohol],
+	"items" : [item_alcohol],
 	"locked" : False,
 	"npc": [npc_bar_man]
 }
@@ -63,7 +100,7 @@ room_laundry = {
 	"name": "the laundry room",
 	"description" : """
 You are now standing in the laundry room in the hotel. 
-Tumble dryers spin around you. No one is here.
+Tumble dryers spinning spaghetti stand around you. No one is here.
 You can go north to the back alley or south to the kitchen. """,
 	"exits" : {"north" : "Alley", "south" : "Kitchen"},
 	"items" : [item_broom],
@@ -78,7 +115,7 @@ You are now standing in a back alley behind the hotel.
 Dustbins line the street giving off a foul odour of waste and decay. 
 You can go south to go back to the Laundry room. """,
 	"exits" : {"south" : "Laundry"},
-	"items" : [],
+	"items" : [item_biscuit],
 	"locked" : False,
 	"npc": []
 }
@@ -421,41 +458,3 @@ You can confront him or you can go back down to the third floor.""",
 	"npc": []
 }
 
-room = {
-	"Lobby": room_lobby,
-	"Kitchen" : room_kitchen,
-	"Bar" : room_bar,
-	"Stairs to first floor" : stairs_to_first,
-	"Laundry" : room_laundry,
-	"Alley" : room_alley,
-	"Hallway" : first_floor_hallway,
-	"Rooms 1 and 2" : rooms_1_and_2,
-	"Room 1" : room_1,
-	"Room 2" : room_2,
-	"Rooms 3 and 4" : rooms_3_and_4,
-	"Room 3" : room_3,
-	"Room 4" : room_4,
-	"Rooms 5 and 6" : rooms_5_and_6,
-	"Room 5" : room_5,
-	"Room 6" : room_6,
-	"Stairs to second floor" : stairs_to_second,
-	"Maze start" : maze_start,
-	"Into the maze" : maze_1,
-	"Further into the maze" : maze_2,
-	"Deeper into the maze" : maze_3,
-	"Into more maze" : maze_4,
-	"Deeper again" : maze_5,
-	"Into even more maze" : maze_6,
-	"Even further into this floor" : maze_7,
-	"Even deeper into the maze -like floor" : maze_8,
-	"Even deeper" : maze_9,
-	"Further into the third floor" : maze_10,
-	"Further in" : maze_11,
-	"Even further in" : maze_12,
-	"Deeper into the maze again" : maze_13,
-	"Even deeper into the third floor" : maze_14,
-	"More of the maze" : maze_15,
-	"Secret door" : secret_door,
-	"Stairs to the roof" : stairs_to_roof,
-	"The roof" : room_roof
-}
