@@ -159,7 +159,7 @@ room_3 = {
 	"description" : """
 You enter this room to find 4 hostages - tied up with rope, their mouths stuffed with towels. 
 A men stands guard over them, his gun pointed at them. A keycard hangs from man's belt
-You can go east back to the hallway or you can figh the man and save the hostages """,
+You can go east back to the hallway or you can fight the man and save the hostages """,
 	"exits" : {"east" : "Rooms 3 and 4"},
 	"items" : [item_secret_key],
 	"locked" : True,
