@@ -239,37 +239,37 @@ def question(current_room):
 	if current_room['name'] == "the stairs to the first floor":
 		#This question is number 1 
 		print("What colour is the chef's hat?")
-		print("Red \n", "Purple\n", "Green\n", "White\n", "To exit question enter: EXIT")
+		print("Red", "\nPurple", "\nGreen", "\nWhite", "\nTo exit question enter: EXIT")
 		return answer(1, current_room)
 
 	elif current_room['name'] == room["Room 3"]:
 		#This question is number 2
 		print("What item is found in the ally?")
-		print("Biscuit\n", "Broom\n", "kitchen-knife\n", "Phone\n", "To exit question enter: EXIT")
+		print("Biscuit", "\nBroom", "\nkitchen-knife", "\nPhone", "\nTo exit question enter: EXIT")
 		return answer(2, current_room)
 
 	elif current_room['name'] == room["Room 5"]:
 		#This question is number 3
 		print("What is the name of the bar tender?")
-		print("Walter\n", "Ben\n", "Gerald\n", "Larry\n", "To exit question enter: EXIT")
+		print("Walter", "\nBen", "\nGerald", "\nLarry", "\nTo exit question enter: EXIT")
 		return answer(3, current_room)
 
 	elif current_room['name'] == room["Room 6"]:
 		#This question is number 4
 		print("What colour is the drink being served in the bar?")
-		print("Pink\n", "Blue\n", "Brown\n", "To exit question enter: EXIT")
+		print("Pink", "\nBlue", "\nBrown", "\nTo exit question enter: EXIT")
 		return answer(4, current_room)
 
 	elif current_room['name'] == room["Stairs to second floor"]:
 		#This question is number 5
 		print("What is Mickeys favourite colour?")
-		print("Red\n", "Purple\n", "Yellow\n", "Pink\n", "To exit question enter: EXIT")
+		print("Red", "\nPurple", "\nYellow", "\nPink", "\nTo exit question enter: EXIT")
 		return answer(5, current_room)
 
 	elif current_room['name'] == room["Secret door"]:
 		#This question is number 6
 		print("What is in the laundry?")
-		print("Spaghetti\n", "Shoes\n", "Bucket\n", "Shirts\n", "To exit question enter: EXIT")
+		print("Spaghetti", "\nShoes", "\nBucket", "\nShirts", "\nTo exit question enter: EXIT")
 		return answer(6, current_room)
 
 def answer(question_number, current_room):
