@@ -29,7 +29,7 @@ MonsterLeeStats = [MonsterLeeLowAttack, MonsterLeeHighAttack, MonsterLeeHealth, 
 print ("\n\n You have faced Lee and you must defeat him first to move forward in the MAZE!")
 print ("\n\n But you need some time to prepare for the battle in order to win!")
 print ("\n So far. . . you are. . .")
-print ("    averagely built character that has the decent base health - 100")
+print ("    Averagely built character that has the decent base health - 100")
 print ("    and armor - 5, does physical damage, 5.0% critical chance,")
 print ("    attacks are affected by armor")
 print ("\n Take wise decisions.")
