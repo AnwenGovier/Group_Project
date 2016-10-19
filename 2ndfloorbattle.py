@@ -41,15 +41,14 @@ os.system("cls")
 ##################################################################################################
 
 while Times not in range(TimesLow, TimesHigh+1):
-	print ("\n\n\n\n\n\n\n\n\n\n\n                   Enter the times you need to prepare (1-10): ")
-	#need loop that asks for valid integer value
+	print ("\n                Enter the times you need to prepare (1-10): ")
 	try:
 		Times = int(input("                                     "))
 	except ValueError:
-		print ("Sorry, I didn't understand that. you must enter a number between 1-10.")
+		os.system("cls")
+		print ("       Sorry, invalid input. You must enter a number between 1-10.")
 		continue
-
-os.system("cls")
+	os.system("cls")
 
 ##################################################################################################
 
@@ -74,7 +73,6 @@ def TimesF(Time):
 	print (" 2. Forge your Armor - Increase Armor by 2.")
 	print (" 3. Rest - Incerase Health by 15.")
 	print (" 4. Pray - Increase the chance of doing double damage by 5%.")
-	print (" 5. None - Does nothing.")
 
 #################################################################################################
 
@@ -130,7 +128,6 @@ def HitMonster(HeroPlayerLowAttack, MonsterRichardHighAttack, MonsterRichardArmo
 			if (Damage <= 0):  
 				Damage = 0
 				print (" Armor has blocked the incoming damage completely!")
-		#----------------------------------------------------------------------------#    
 	else:
 			print("\n\n Miss!")
 			Damage = 0
@@ -139,7 +136,13 @@ def HitMonster(HeroPlayerLowAttack, MonsterRichardHighAttack, MonsterRichardArmo
 
 for Time in range(1,Times+1):                                 
 	TimesF(Time)                                       
-	Action = int(input("\n Enter your action: "))             
+	try:
+		Action = int(input("\n Enter your action: "))
+	except ValueError:
+		os.system("cls")
+		print ("Sorry, invalid input. You must enter an action between 1 and 4.")
+		print ("You also lost one time for preparation, so please do not make any mistakes.")
+		continue
 	os.system("cls")                                        
 	
 	if (Action == 1):                                       
@@ -158,10 +161,6 @@ for Time in range(1,Times+1):
 	elif (Action == 4):
 		print("\n You've chosen to Pray (+5% Critical Chance)")
 		HeroPlayerCriticalChance = HeroPlayerCriticalChance + HeroPlayerCriticalChance*0.05
-
-	elif (Action == 5):
-		print("\n You've chosen to do nothing")
-
 	else:                                                   
 		print("\n Please input your choice again.")
 
@@ -208,7 +207,7 @@ while (HeroPlayerHealth > 0 and MonsterRichardHealth > 0):
 	if (MonsterRichardHealth <= 0):
 		MonsterRichardHealth = 0
 		
-	print(" Richard has been damaged for ", Damage, " his health is ", MonsterRichardHealth)
+	print(" Richard has been damaged for ",Damage, " and his health is ",MonsterRichardHealth)
 	input("\n__________________________________________________________________")
 
 	if (MonsterRichardHealth <= 0):
@@ -224,7 +223,7 @@ while (HeroPlayerHealth > 0 and MonsterRichardHealth > 0):
 	if (HeroPlayerHealth <= 0): 
 		HeroPlayerHealth = 0
 		
-	print(" You have been damaged for ", Damage, " your health is ", HeroPlayerHealth)
+	print(" You have been damaged for ",Damage, " and your health is ",HeroPlayerHealth)
 	input("\n__________________________________________________________________")
 
 	if (HeroPlayerHealth <= 0):
