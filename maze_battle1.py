@@ -171,7 +171,7 @@ def Ending(HeroPlayerHealth):
 	if (HeroPlayerHealth <= 0):
 		os.system("cls")
 		print("\n You have taken a fatal blow!")
-		print(" You didn't manage to defeat Lee")
+		print(" You didn't even manage to defeat Lee")
 		print(" Game over!")
 		print("\n\n\n\n\n Press any key to continue. . . ")
 		getch()
