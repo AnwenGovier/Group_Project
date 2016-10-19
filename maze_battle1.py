@@ -68,7 +68,7 @@ def TimesF(Time):
 	print (" Critical Chance:", '{0:.3g}'.format(HeroPlayerCriticalChance*100), "%")
 	
 	print (" \n You can prepare " + str(Times) + " times.")
-	print (" \n Choice your task: ")
+	print (" \n Choose your task: ")
 	print (" \n 1. Train your Attack - Increase Attack by 2-2.")
 	print (" 2. Forge your Armor - Increase Armor by 2.")
 	print (" 3. Rest - Incerase Health by 15.")
