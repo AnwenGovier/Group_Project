@@ -190,7 +190,7 @@ def Ending(HeroPlayerHealth):
 		os.system("cls")
 		print("\n You are victorious!")
 		print(" You are the one who survived the battle with Richard")
-		print (" Congratulations!!! You won the game!!!")
+		print (" Congratulations! You can now move on.")
 		print("\n\n\n\n\n Press any key to continue. . . ")
 		getch()
 		os.system("cls")
