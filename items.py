@@ -78,57 +78,5 @@ item_tablets = {
 	"""These tablets will regenerate your health!"""
 }
 
-item_secret_key = {
-	"id": "secret-key",
 
-	"name": "a secret key",
-
-	"damage": 0,
-
-	"health": 0,
-
-	"description":
-	"""This secret key will unlock a door that will let you skip part of a level."""
-}
-
-
-item_room5_key = {
-	"id": "key-5",
-
-	"name": "a key for room 5",
-
-	"damage": 0, 
-
-	"health": 0,
-
-	"description": 
-	"""This key will unlock room 5 on level 2."""
-
-}
-
-item_room3_key = {
-	"id": "key-3",
-
-	"name": "a key for room 3",
-
-	"damage": 0,
-
-	"health": 0,
-
-	"description":
-	"""This key will unlock room 3 on level 2."""
-}
-
-item_second_level_key = {
-	"id": "key-2",
-
-	"name": "a key for the second level",
-
-	"damage": 0,
-
-	"health": 0,
-
-	"description":
-	"""This key will unlock the stairs to level 2."""
-}
 

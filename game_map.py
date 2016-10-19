@@ -124,7 +124,7 @@ room_1 = {
 	"description" : """
 You are now standing in a deserted bedroom. Clothes are strung everywhere, furniture knocked over. Whoever stayed here left in a hurry... """,
 	"exits" : {"east" : "Rooms 1 and 2" },
-	"items" : [item_pistol, item_second_level_key],
+	"items" : [item_pistol],
 	"locked" : False,
 	"npc": []
 }
@@ -136,7 +136,7 @@ You now stand in an empty ensuite bedroom. The bathroom is locked. The room cont
 than a bed, nightstand and a chest of drawers. Red suitcases lie on the floor, Mickey written on the sides.
 You decide to search the room anyway - the occupant may have left something behind.""",
 	"exits" : {"west" : "Rooms 1 and 2"},
-	"items" : [item_room3_key],
+	"items" : [item_biscuit],
 	"locked" : False,
 	"npc": []
 
@@ -160,7 +160,7 @@ room_3 = {
 You enter this room to find 4 hostages - tied up with rope, their mouths stuffed with towels. 
 You can go east back to the hallway. """,
 	"exits" : {"east" : "Rooms 3 and 4"},
-	"items" : [item_secret_key],
+	"items" : [],
 	"locked" : True,
 	"npc": []
 }
@@ -171,7 +171,7 @@ room_4 = {
 You are now standing in another abandoned bedroom. A first aid kit lies under the bed, inside are some tablets.
 You can go east back to the hallway outside or search the room.""",
 	"exits" : {"west" : "Rooms 3 and 4"},
-	"items" : [item_tablets, item_room5_key],
+	"items" : [item_tablets],
 	"locked" : False,
 	"npc": []
 }
@@ -191,8 +191,7 @@ to rooms 3 and 4. """,
 room_5 = {
 	"name": "room five",
 	"description" : """
-You are now standing in one of the final bedrooms on this floor. A maids cart lies abandoned in the room, the towels missing. 
-A keycard hangs off a landyard attached to the cart """,
+You are now standing in one of the final bedrooms on this floor. A maids cart lies abandoned in the room, the towels missing. """,
 	"exits" : {"east" : "Rooms 5 and 6"},
 	"items" : [],
 	"locked" : True,
@@ -211,8 +210,8 @@ room_6 = {
 stairs_to_second = {
 	"name": "the stairs to the second floor",
 	"description" : """ 
-You are now standing in front of a set of stairs blocked by a door. The only way to access them is to use a keycard.
-Go west and use the keycard to get to the next floor or go east to go back to the first floor hallway.""",
+You are now standing in front of a set of stairs blocked by a door. The only way to access them is to answer a question correctly.
+Go west to the next floor or go east to go back to the first floor hallway.""",
 	"exits" : {"east" : "Hallway", "west" : "Maze start"},
 	"items" : [],
 	"locked" : True,
