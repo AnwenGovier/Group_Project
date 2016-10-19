@@ -6,6 +6,8 @@ from items import *
 from filter_inputs import *
 import random
 import os
+import time
+from subprocess import call
 
 def create_a_list_of_items(items):
 	"""
@@ -86,10 +88,20 @@ def print_description_current_room(room):
     <BLANKLINE>
     There is a pistol, a key for the second level here in the room.    
 	"""
+	n=0
 	if player["Intoxicated"] == True:
-		print('\nYou are currently in ' + room['name'].upper() + "\n" + intoxication(room['description']) + "\n")
-		print_a_list_of_room_items(room)
-		player["Intoxicated"] = False
+		os.system("cls")
+		for n in range(0, 5):
+			for color in('12', '45', 'F0', '2E', '0F'):
+				call('cls', shell = True)
+				call('color ' + color, shell = True)
+				print('\nYou are currently in ' + room['name'].upper() + "\n" + intoxication(room['description']) + "\n")
+				print_a_list_of_room_items(room)
+				print("\n"+"\n" + "Go home, your drunk!")
+				player["Intoxicated"] = False
+				time.sleep(0.3)
+				n= n+1
+
 	else:
 		print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n")
 		print_a_list_of_room_items(room)
