@@ -86,7 +86,7 @@ def Hit (HeroPlayerLowAttack, HeroPlayerHighAttack, HeroPlayerArmor, Armor1):
 	if (Miss >= 10):
 				   
 		if (Critical >= 10):
-			print("\n\n Successful hit!") 
+			print("\n\n Successful HIT!") 
 			Damage = Attack - Armor1
 
 			if (Damage <= 0):  
