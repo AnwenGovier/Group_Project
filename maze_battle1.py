@@ -101,7 +101,7 @@ def Hit (HeroPlayerLowAttack, HeroPlayerHighAttack, HeroPlayerArmor, Armor1):
 					print (" Armor has blocked the incoming damage completely!")
 		
 	else:
-			print("\n\n Miss!")
+			print("\n\n ooh you Missed!")
 			Damage = 0
 
 def HitMonster(HeroPlayerLowAttack, MonsterLeeHighAttack, MonsterLeeArmor, Armor2):
