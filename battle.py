@@ -208,7 +208,7 @@ while (HeroPlayerHealth > 0 and MonsterKirillHealth > 0):
 	if (MonsterKirillHealth <= 0):
 		MonsterKirillHealth = 0
 		
-	print(" Kirill has been damaged for ", Damage, " and now his health is ", '{0:.3g}'.format(MonsterKirillHealth))
+	print(" Kirill has been damaged for ",Damage, " and now his health is ", '{0:.3g}'.format(MonsterKirillHealth))
 	input("\n__________________________________________________________________")
 
 	if (MonsterKirillHealth <= 0):
@@ -223,7 +223,7 @@ while (HeroPlayerHealth > 0 and MonsterKirillHealth > 0):
 	if (HeroPlayerHealth <= 0): 
 		HeroPlayerHealth = 0
 		
-	print(" You have been damaged for ", Damage, " and now your health is ", '{0:.3g}'.format(HeroPlayerHealth))
+	print(" You have been damaged for ",Damage, " and now your health is ", '{0:.3g}'.format(HeroPlayerHealth))
 	input("\n__________________________________________________________________")
 
 	if (HeroPlayerHealth <= 0):
