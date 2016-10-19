@@ -133,7 +133,7 @@ room_2 = {
 	"name": "room two",
 	"description" : """
 You now stand in an empty ensuite bedroom. The bathroom is locked. The room contains little more 
-than a bed, nightstand and a chest of drawers. 
+than a bed, nightstand and a chest of drawers. Red suitcases lie on the floor, Mickey written on the sides.
 You decide to search the room anyway - the occupant may have left something behind.""",
 	"exits" : {"west" : "Rooms 1 and 2"},
 	"items" : [item_room3_key],
@@ -201,7 +201,7 @@ A keycard hangs off a landyard attached to the cart """,
 
 room_6 = {
 	"name": "room six",
-	"description" : """This room is locked. You cannot get in. """,
+	"description" : """The room is completly empty. There is no furniture only undisturbed dust. """,
 	"exits" : {"west" : "Rooms 5 and 6"},
 	"items" : [],
 	"locked" : True,
@@ -237,8 +237,8 @@ secret_door = {
 	"name": "the secret door",
 	"description" : """
 In front of you, lies an entrance to a ventilation system which could help you cut through the maze. 
-It has what appears to be a keycard scanner.""",
-	"exits" : {"north" : "Stairs to the roof"},
+You can go north, into the ventilation system or south back into the maze.""",
+	"exits" : {"north" : "Stairs to the roof", "south" : "Into the maze"},
 	"items" : [],
 	"locked" : True,
 	"npc": []
@@ -249,7 +249,7 @@ maze_1 = {
 	"description" : """
 You have begun to search the maze.
 You can go west or west to go into the maze or south to back to the start of the third floor. """,
-	"exits" : {"west" : "Further into the maze", "east" : "Deeper into the maze", "south" : "Maze start"},
+	"exits" : {"west" : "Further into the maze", "east" : "Deeper into the maze", "south" : "Maze start", "north" : "Secret door"},
 	"items" : [],
 	"locked" : False,
 	"npc": []

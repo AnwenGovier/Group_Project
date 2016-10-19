@@ -86,9 +86,13 @@ def print_description_current_room(room):
     <BLANKLINE>
     There is a pistol, a key for the second level here in the room.    
 	"""
-
-	print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n")
-	print_a_list_of_room_items(room)
+	if player["Intoxicated"] == True:
+		print('\nYou are currently in ' + room['name'].upper() + "\n" + intoxication(room['description']) + "\n")
+		print_a_list_of_room_items(room)
+		player["Intoxicated"] = False
+	else:
+		print('\nYou are currently in ' + room['name'].upper() + "\n" + room['description'] + "\n")
+		print_a_list_of_room_items(room)
 
 def exit_entered_leads_to(exits, direction):
 	"""
@@ -328,7 +332,7 @@ def answer(question_number, current_room):
 		while True:
 			user_ans = input(">>")
 			user_ans = user_input_normalisation(user_ans)
-			if user_ans == ['spagetti']:
+			if user_ans == ['spaghetti']:
 				return True
 				break
 			elif user_ans == ['exit']:
@@ -488,7 +492,13 @@ def drop_an_item(item_id):
 
 def use_item_in_inventory(item_id, items):
 	'''
-	This function allows the user to use an item in the inventory.
+	This function allows the user to use an item that they are carrying in their inventory.
+	The health assigned to the item which will either add to or subtract off the players
+	health. 
+	If the player uses the alcohol, then their intoxication is turned to true and the description of their 
+	current room will become scrambled using intoxication function.
+	If the item has no health properties then nothing happens and a message is displayed telling the user
+	that it has no use to them.
 	'''
 	global inventory
 	global player
@@ -497,13 +507,14 @@ def use_item_in_inventory(item_id, items):
 	for i in items:
 		id = i["id"]
 		if item_id == id:
-			player["Health"] = player["Health"] + i["health"]
-			# CAN'T GET THIS TO WORK
-			print(item_id)
-			if item_alcohol == id:
-				player["Intoxicated"] == True
-				intoxication(text)
-				return
+			if i["health"] != 0:
+				player["Health"] = player["Health"] + i["health"]
+				if i == item_alcohol and player["Intoxicated"] == False:
+					player["Intoxicated"] = True
+					print("YOU ARE NOW INTOXICATED!!")
+			else:
+				print("This item has no use to you. It has been put back in your inventory.")
+				item_in_inventory.append(i)
 		else:
 			item_in_inventory.append(i)
 	inventory = item_in_inventory
@@ -699,12 +710,7 @@ def move_to_another_room(exits, direction):
 	>>> move_to_another_room(room["Bar"]["exits"], "north") == room["Lobby"]
 	False
 	"""
-	global player
-	if player["Intoxicated"] == True:
-		player["Intoxicated"] == False
-		return room[exits[direction]]
-	else:	
-		return room[exits[direction]]
+	return room[exits[direction]]
 
 def stats(player, input_name):
 	"""
