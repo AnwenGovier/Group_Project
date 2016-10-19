@@ -302,7 +302,7 @@ maze_6 = {
 	"description" : """
 You have now reached a junction.
 You can go north, south or west as well as east to retrace your previous steps.""",
-	"exits" : {"north" : "Even deeper into the maze -like floor", "south" : "Even further into this floor", "east" : "Further into the third floor" , "west" : "Deeper again"},
+	"exits" : {"north" : "Even deeper into the maze -like floor", "south" : "Even further into this floor", "east" : "Deeper again" , "west" : "Further into the third floor"},
 	"items" : [],
 	"locked" : False,
 	"npc": []
@@ -344,7 +344,7 @@ maze_10 = {
 	"description" : """
 You arrive at a 4-point cross road.
 You can go north, south and west to go further into the maze or east to go back to where you just were.""",
-	"exits" : {"north" : "Further in", "south" : "Even further in", "east" : "Into even more maze", "west" : "Even further in"},
+	"exits" : {"north" : "Further in", "south" : "Even further in", "east" : "Into even more maze", "west" : "Deeper into the maze again"},
 	"items" : [],
 	"locked" : False,
 	"npc": []

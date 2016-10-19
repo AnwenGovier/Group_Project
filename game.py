@@ -14,12 +14,11 @@ def create_a_list_of_items(items):
 	The following function takes a list of items from a seperate py document items.py
 	and returns a string to the user. Each word is seperated by a comma and a space.
 	e.g.
-	>>> create_a_list_of_items([item_room5_key, item_tablets, item_broom])
-	'a key for room 5, tablets, a broom'
+	>>> create_a_list_of_items([item_tablets, item_broom])
+	'tablets, a broom'
 	>>> create_a_list_of_items([item_pistol, item_biscuit])
 	'a pistol, a biscuit'
-	>>> create_a_list_of_items([item_second_level_key, item_secret_key, item_alcohol])
-	'a key for the second level, a secret key, an alcoholic drink'
+	
 
 	"""
 	list_of_items = []
