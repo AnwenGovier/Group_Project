@@ -45,7 +45,8 @@ while Times not in range(TimesLow, TimesHigh+1):
 	try:
 		Times = int(input("                                     "))
 	except ValueError:
-		print ("Sorry, invalid input. You must enter a number between 1-10.")
+		os.system("cls")
+		print ("       Sorry, invalid input. You must enter a number between 1-10.")
 		continue
 	os.system("cls")
 
