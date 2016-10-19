@@ -412,6 +412,15 @@ def execute_program(current_room):
 				completed_fights['fight'] = True
 				return current_room
 
+	if current_room['name'] == "Even deeper into the third floor":
+		for x in completed_fights:
+			if completed_fights["Maze Fight"] == True:
+				return current_room
+			else:
+				os.system("maze_battle1.py")
+				completed_fights["Maze Fight"] = True
+				return current_room
+
 
 	
 def is_item_in_list(item, items):

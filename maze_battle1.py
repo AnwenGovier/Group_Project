@@ -68,7 +68,7 @@ def TimesF(Time):
 	print (" Critical Chance:", '{0:.3g}'.format(HeroPlayerCriticalChance*100), "%")
 	
 	print (" \n You can prepare " + str(Times) + " times.")
-	print (" \n Choice your task: ")
+	print (" \n Choose your task: ")
 	print (" \n 1. Train your Attack - Increase Attack by 2-2.")
 	print (" 2. Forge your Armor - Increase Armor by 2.")
 	print (" 3. Rest - Incerase Health by 15.")
@@ -86,7 +86,7 @@ def Hit (HeroPlayerLowAttack, HeroPlayerHighAttack, HeroPlayerArmor, Armor1):
 	if (Miss >= 10):
 				   
 		if (Critical >= 10):
-			print("\n\n Successful hit!") 
+			print("\n\n Successful HIT!") 
 			Damage = Attack - Armor1
 
 			if (Damage <= 0):  
@@ -101,7 +101,7 @@ def Hit (HeroPlayerLowAttack, HeroPlayerHighAttack, HeroPlayerArmor, Armor1):
 					print (" Armor has blocked the incoming damage completely!")
 		
 	else:
-			print("\n\n Miss!")
+			print("\n\n ooh you Missed!")
 			Damage = 0
 
 def HitMonster(HeroPlayerLowAttack, MonsterLeeHighAttack, MonsterLeeArmor, Armor2):
@@ -171,7 +171,7 @@ def Ending(HeroPlayerHealth):
 	if (HeroPlayerHealth <= 0):
 		os.system("cls")
 		print("\n You have taken a fatal blow!")
-		print(" You didn't manage to defeat Lee")
+		print(" You didn't even manage to defeat Lee")
 		print(" Game over!")
 		print("\n\n\n\n\n Press any key to continue. . . ")
 		getch()
