@@ -13,7 +13,7 @@ HeroPlayerLowAttack = 5
 HeroPlayerHighAttack = 15
 HeroPlayerHealth = 100
 HeroPlayerCriticalChance = 0.05
-HeroPlayerArmor = 5
+HeroPlayerArmor = 0
 
 MonsterLeeLowAttack = 5
 MonsterLeeHighAttack = 10
