@@ -11,7 +11,7 @@ player = {"Name": "Change to input", "Health": 100, "Alive": True, "Intoxicated"
 player_stats = ["Name", "Health", "Alive", "Intoxicated"]
 
 #completed fights
-completed_fights = {"first stairs fight": False, "fight": False, "second stairs fight": False}
+completed_fights = {"first stairs fight": False, "fight": False, "second stairs fight": False, "Maze Fight": False}
 
 
 #the room that the user is currently situated in
