@@ -137,8 +137,8 @@ for Time in range(1,Times+1):
 	TimesF(Time)                                       
 	try:
 		Action = int(input("\n Enter your action: "))
-		os.system("cls")
 	except ValueError:
+		os.system("cls")
 		print ("Sorry, invalid input. You must enter an action between 1 and 4.")
 		print ("You also lost one time for preparation, so please do not make any mistakes.")
 		continue
